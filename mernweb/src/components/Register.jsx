@@ -18,7 +18,7 @@ const Register = () => {
                         <h1 className="display-6 fw-bolder mb-5">REGISTER</h1>
                         <form>
                         <div class="mb-3">
-                                <label for="name" class="form-label">Username</label>
+                                <label for="name" lass="form-label">Username</label>
                                 <input type="text" class="form-control" id="name"/>
                             </div>
                             <div class="mb-3">
