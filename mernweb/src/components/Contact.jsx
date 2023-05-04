@@ -20,25 +20,25 @@ const Contact = () => {
                         </div>
                         <div className="col-md-6">
                             <form action="">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Your Name</label>
+                                <div className="mb-3">
+                                    <label for="name" className="form-label">Your Name</label>
                                     <input 
                                     type="text" 
-                                    class="form-control" 
+                                    className="form-control" 
                                     id="name" 
                                     placeholder="Enter Your Name"/>
                                 </div>
                                 
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Email Id</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your email id"/>
+                                <div className="mb-3">
+                                    <label for="exampleFormControlInput1" className="form-label">Email Id</label>
+                                    <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Enter Your email id"/>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">
+                                <div className="mb-3">
+                                    <label for="exampleFormControlTextarea1" className="form-label">
                                         Your Message
                                     </label>
                                     <textarea 
-                                    class="form-control" 
+                                    className="form-control" 
                                     id="exampleFormControlTextarea1" 
                                     rows="5"></textarea>
                                 </div>
