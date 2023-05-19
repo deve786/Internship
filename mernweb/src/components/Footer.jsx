@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
     return(
@@ -14,59 +15,61 @@ const Footer = () => {
                                 <h5>Section</h5>
                                 <ul className="nav flex-column">
                                     <li className="nav-item mb-2">
-                                        <a to="/" className="nav-link p-0 text-white">
+                                        <NavLink to="/" className="nav-link p-0 text-white">
                                             Home
-                                        </a>
+                                        </NavLink>
                                     </li>
                                     <li className="nav-item mb-2">
-                                        <a to="#" className="nav-link p-0 text-white">
-                                            Features
-                                        </a>
+                                        <NavLink to="/services" className="nav-link p-0 text-white">
+                                            Services
+                                        </NavLink>
                                     </li>
                                     <li className="nav-item mb-2">
-                                        <a to="#" className="nav-link p-0 text-white">
-                                            Pricing
-                                        </a>
+                                        <NavLink to="/blog" className="nav-link p-0 text-white">
+                                            Blog
+                                        </NavLink>
                                     </li>
-                                    <li className="nav-item mb-2">
-                                        <a to="#" className="nav-link p-0 text-white">
+                                    {/* <li className="nav-item mb-2">
+                                        <NavLink to="#" className="nav-link p-0 text-white">
                                             FAQs
-                                        </a>
+                                        </NavLink>
                                     </li>
                                     <li className="nav-item mb-2">
-                                        <a to="/about" className="nav-link p-0 text-white">
+                                        <NavLink to="/about" className="nav-link p-0 text-white">
                                             About
-                                        </a>
-                                    </li>
+                                        </NavLink>
+                                    </li> */}
                                 </ul>
-                            </div>
+                            </div> 
                             <div className="col-2">
-                                <h5>Section</h5>
+                                <br />
+                                <br />
+                                {/* <h5>Section</h5> */}
                                 <ul className="nav flex-column">
-                                    <li className="nav-item mb-2">
-                                        <a to="/" className="nav-link p-0 text-white">
+                                    {/* <li className="nav-item mb-2">
+                                        <NavLink to="/" className="nav-link p-0 text-white">
                                             Home
-                                        </a>
+                                        </NavLink>
                                     </li>
                                     <li className="nav-item mb-2">
-                                        <a to="#" className="nav-link p-0 text-white">
-                                            Features
-                                        </a>
+                                        <NavLink to="/services" className="nav-link p-0 text-white">
+                                            Services
+                                        </NavLink>
                                     </li>
                                     <li className="nav-item mb-2">
-                                        <a to="#" className="nav-link p-0 text-white">
-                                            Pricing
-                                        </a>
+                                        <NavLink to="/blog" className="nav-link p-0 text-white">
+                                            Blog
+                                        </NavLink>
+                                    </li> */}
+                                    <li className="nav-item mb-2">
+                                        <NavLink to="/contact" className="nav-link p-0 text-white">
+                                            Contact Us
+                                        </NavLink>
                                     </li>
                                     <li className="nav-item mb-2">
-                                        <a to="#" className="nav-link p-0 text-white">
-                                            FAQs
-                                        </a>
-                                    </li>
-                                    <li className="nav-item mb-2">
-                                        <a to="#" className="nav-link p-0 text-white">
+                                        <NavLink to="/about" className="nav-link p-0 text-white">
                                             About
-                                        </a>
+                                        </NavLink>
                                     </li>
                                 </ul>
                             </div>
@@ -93,9 +96,9 @@ const Footer = () => {
                         <div className="d-flex justify-content-between pt-4 mt-4 border-top">
                             <p>© 2021 Company, Inc. All rights reserved.</p>
                             <ul className="list-unstyled d-flex">
-                                <li className="ms-3"><a className="link-light" to="#"><i className="fa fa-facebook fa-2x"></i></a></li>
-                                <li className="ms-3"><a className="link-light" to="#"><i className="fa fa-instagram fa-2x"></i></a></li>
-                                <li className="ms-3"><a className="link-light" to="#"><i className="fa fa-twitter fa-2x"></i></a></li>
+                                <li className="ms-3"><NavLink className="link-light" to="#"><i className="fa fa-facebook fa-2x"></i></NavLink></li>
+                                <li className="ms-3"><NavLink className="link-light" to="#"><i className="fa fa-instagram fa-2x"></i></NavLink></li>
+                                <li className="ms-3"><NavLink className="link-light" to="#"><i className="fa fa-twitter fa-2x"></i></NavLink></li>
                             </ul>
                         </div>
 

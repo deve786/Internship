@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+// import Dropdown from 'bootstrap/js/src/dropdown';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import About from './components/About';
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <Navbar />
+      {/* <Dropd.own /> */}
       <Routes>
         <Route exact path="/" element={<Home/>} />
         <Route exact path="/about" element={<About/>} />
@@ -28,6 +30,7 @@ function App() {
         <Route exact path="/login" element={<Login/>} />
         <Route exact path="/register" element={<Register/>} />
         <Route exact path="/allblog" element={<AllBlog/>} />
+        <Route exact path="/services" element={<Services/>} />
       </Routes>
       
       

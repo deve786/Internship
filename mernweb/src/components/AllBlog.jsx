@@ -51,7 +51,7 @@ const AllBlog = () => {
                     <div className="col-md-4">
                         <div class="card p-3">
 
-                            <img src="blog4.jpg" className="card-img-top w-75 l-85" alt="Blog" />
+                            <img src="blog4.jpg" className="card-img-top flex-1" alt="Blog" />
                             <div class="card-body text-center">
                                 <h5 class="card-title mb-3 fs-4 fw-bold">Blog 4</h5>
                                 <p class="card-text lead">

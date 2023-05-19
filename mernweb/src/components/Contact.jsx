@@ -15,7 +15,7 @@ const Contact = () => {
                     <div className="row">
                         <div className="col-md-6">
 
-                            <img src="contact.jpg" alt="Contact" className="w-75" />
+                            <img src="contact1.jpg" alt="Contact" className="w-75" />
 
                         </div>
                         <div className="col-md-6">
