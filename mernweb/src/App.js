@@ -11,6 +11,8 @@ import {Route, Routes} from 'react-router-dom';
 import ERR from './components/ERR';
 import Login from './components/Login';
 import Register from './components/Register';
+import Blog from './components/Blog';
+import AllBlog from './components/AllBlog';
   
 function App() {
   
@@ -20,11 +22,12 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home/>} />
         <Route exact path="/about" element={<About/>} />
-        <Route exact path="/services" element={<Services/>} />
+        <Route exact path="/blog" element={<Blog/>} />
         <Route exact path="/contact" element={<Contact/>} />
         <Route exact path="/*" element={<ERR/>} />
         <Route exact path="/login" element={<Login/>} />
         <Route exact path="/register" element={<Register/>} />
+        <Route exact path="/allblog" element={<AllBlog/>} />
       </Routes>
       
       
