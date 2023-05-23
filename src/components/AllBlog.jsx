@@ -35,7 +35,7 @@ const AllBlog = () => {
                 <div className="card-body text-center card-desc">
                     <h5 className="card-title mb-3 fs-4 fw-bold">{post.title}</h5>
                     {/* <p className="card-text lead">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        Some quick example tesxt to build on the card title and make up the bulk of the card's content.
                     </p> */}
                     <Link
             to={`/blog/${post.slug.current}`}
