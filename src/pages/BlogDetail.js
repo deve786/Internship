@@ -8,7 +8,7 @@ function BlogDetail() {
   const [singlePost, setSinglePost] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { slug } = useParams();
-  const date = singlePost.publishedAt;
+  // const date = singlePost.publishedAt;
   useEffect(() => {
     client
       .fetch(
@@ -34,7 +34,7 @@ function BlogDetail() {
     setIsLoading(false);
   }, [slug]);
 
-  console.log(date);
+  // console.log(date);
   return (
     <>
       {isLoading ? (
@@ -66,7 +66,7 @@ function BlogDetail() {
           <button>
             <Link
               to="/allblog"
-              className="py-2 px-6 rounded shadow text-white bg-black hover:bg-transparent border-2 border-black transition-all duration-500 hover:text-black font-bold "
+              className="py-2 px-6 rounded shadow text-white bg-black hover:bg-transparent border-2 border-black transition-all duration-500 hover:text-black font-bold btnHvr "
             >
               Read more articles...
             </Link>

@@ -39,7 +39,7 @@ img {
 .blog-card {
   height: 500px !important;
   display: flex !important;
-  max-width: 500px !important;
+  max-height: 500px !important;
 }
 
 .card-desc {
@@ -51,4 +51,20 @@ img {
 
 .imgg{
   height: 100% !important;
+}
+
+.btnHvr{
+  text-decoration: none;
+  color: #fff;
+}
+.btnHvr:hover{
+  text-decoration: none;
+  color: #000 !important;
+  background-color: #fff !important;
+}
+.allblog{
+  margin-top: 10px !important;
+}
+#allblog{
+  padding: 21px !important;
 }

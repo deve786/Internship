@@ -56,7 +56,7 @@ const Blog = () => {
 
                         <Link
                           to={`/blog/${postSlice.slug.current}`}
-                          className="py-2 px-6 rounded shadow text-white bg-black hover:bg-transparent border-2 border-black transition-all duration-500 hover:text-black font-bold"
+                          className=" btnHvr py-2 px-6 rounded shadow text-white bg-black hover:bg-transparent border-2 border-black transition-all duration-500 hover:text-black font-bold"
                         >
                           Read More
                         </Link>
