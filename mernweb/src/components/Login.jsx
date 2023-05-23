@@ -1,7 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-
+// import { useNavigate } from 'react-router-dom';
 const Login = () => {
+    const handleClick = (e) => {
+        e.preventDefault();
+        window.location.replace('https://blogmanage.sanity.studio/desk');
+      };
     return (
         <div>
             <div className="container shadow my-5">
@@ -29,7 +33,7 @@ const Login = () => {
                                 <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                                 <label className="form-check-label" for="exampleCheck1">Remember me</label>
                             </div>
-                            <button type="submit" className="btn btn-primary rounded-pill">Submit</button>
+                            <button onClick={handleClick} type="submit" className="btn btn-primary rounded-pill">Submit.</button>
                         </form>
                     </div>
                 </div>

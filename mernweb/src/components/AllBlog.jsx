@@ -1,101 +1,60 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import client from "../client";
 
 const AllBlog = () => {
-    return (
-        <div >
-            <section id="allblog">
-                <div className="row mt-5">
-                    <div className="col-md-4">
-                        <div class="card p-3">
+  const [post, setPost] = useState([]);
 
-                            <img src="blog1.jpg" className="card-img-top" alt="Blog" />
-                            <div class="card-body text-center">
-                                <h5 class="card-title mb-3 fs-4 fw-bold">Blog 1</h5>
-                                <p class="card-text lead">
-                                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                                </p>
-                                <a href="/" className="btn btn-primary">Read More</a>
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type=='post']{
+                  title,
+                  slug,body,mainImage{
+                      asset ->{
+                          _id,
+                          url
+                      },
+                      alt
+                  }
+              }`
+      )
+      .then((data) => setPost(data))
+      .catch(console.error);
+  }, []);
 
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div class="card p-3">
-                            <img src="blog2.jpg" className="card-img-top" alt="Blog" />
-                            <div class="card-body text-center">
-                                <h5 class="card-title mb-3 fs-4 fw-bold">Blog 2</h5>
-                                <p class="card-text lead">
-                                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                                </p>
-                                <a href="/" className="btn btn-primary">Read More</a>
+  return (
+    <div>
+      <section id="allblog">
+        <div className="row mt-5">
+          {post.map((post) => (
+            <div className="col-md-4" key={post.slug.current}>
+            <div className="card p-3 ">
 
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div class="card p-3">
-                            <img src="blog3.jpg" className="card-img-top" alt="Blog" />
-                            <div class="card-body text-center">
-                                <h5 class="card-title mb-3 fs-4 fw-bold">Blog 3</h5>
-                                <p class="card-text lead">
-                                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                                </p>
-                                <a href="/" className="btn btn-primary">Read More</a>
+                <img src={post.mainImage.asset.url} className="card-img-top"  alt={post.title} />
+                <div className="card-body text-center">
+                    <h5 className="card-title mb-3 fs-4 fw-bold">{post.title}</h5>
+                    {/* <p className="card-text lead">
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p> */}
+                    <Link
+            to={`/blog/${post.slug.current}`}
+            className="py-2 px-6 rounded shadow text-white bg-black hover:bg-transparent border-2 border-black transition-all duration-500 hover:text-black font-bold"
+          >
+            Read More
+          </Link>
 
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
-                <div className="row mt-5">
-                    <div className="col-md-4">
-                        <div class="card p-3">
-
-                            <img src="blog4.jpg" className="card-img-top flex-1" alt="Blog" />
-                            <div class="card-body text-center">
-                                <h5 class="card-title mb-3 fs-4 fw-bold">Blog 4</h5>
-                                <p class="card-text lead">
-                                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                                </p>
-                                <a href="/" className="btn btn-primary">Read More</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div class="card p-3">
-                            <img src="blog5.jpg" className="card-img-top" alt="Blog" />
-                            <div class="card-body text-center">
-                                <h5 class="card-title mb-3 fs-4 fw-bold">Blog 5</h5>
-                                <p class="card-text lead">
-                                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                                </p>
-                                <a href="/" className="btn btn-primary">Read More</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div class="card p-3">
-                            <img src="blog6.jpg" className="card-img-top" alt="Blog" />
-                            <div class="card-body text-center">
-                                <h5 class="card-title mb-3 fs-4 fw-bold">Blog 6</h5>
-                                <p class="card-text lead">
-                                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                                </p>
-                                <a href="/" className="btn btn-primary">Read More</a>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <br />
-                <br />
-
-            </section>
+            </div>
         </div>
-    );
-}
+        ))}
+             
+        </div>
+        <br />
+        <br />
+      </section>
+    </div>
+  );
+};
 
 export default AllBlog;

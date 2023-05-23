@@ -1,3 +1,4 @@
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import Topbar from "./components/topbar/Topbar";
 import Homepage from "./pages/homepage/Homepage";
 import Login from "./pages/login/Login";
@@ -5,7 +6,7 @@ import Register from "./pages/register/Register";
 import Settings from "./pages/settings/Settings";
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 
 function App() {
   const currentUser = true;
@@ -13,21 +14,21 @@ function App() {
     <Router>
       <Topbar />
       <Routes>
-        <Route exact path="/">
+        <Route exact element="/">
           <Homepage />
         </Route>
-        <Route path="/posts">
+        <Route element="/posts">
           <Homepage />
         </Route>
-        <Route path="/register">
+        <Route element="/register">
           {currentUser ? <Homepage /> : <Register />}
         </Route>
-        <Route path="/login">{currentUser ? <Homepage /> : <Login />}</Route>
-        <Route path="/post/:id">
+        <Route element="/login">{currentUser ? <Homepage /> : <Login />}</Route>
+        <Route element="/post/:id">
           <Single />
         </Route>
-        <Route path="/write">{currentUser ? <Write /> : <Login />}</Route>
-        <Route path="/settings">
+        <Route element="/write">{currentUser ? <Write /> : <Login />}</Route>
+        <Route element="/settings">
           {currentUser ? <Settings /> : <Login />}
         </Route>
       </Routes>

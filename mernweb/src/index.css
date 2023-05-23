@@ -1,13 +1,54 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+img {
+  max-width: 100%;
+  margin: auto;
+}
+.blogimg {
+  max-height: 300px;
+  height: 300px;
+}
+@media (min-width: 768px) {
+  img.blog__image {
+    height: 600px;
+    width: 100%;
+  }
+  .block__content p {
+    font-size: 18px;
+  }
+}
+.block__content p {
+  line-height: 1.6;
+}
+.block__content h2 {
+  font-weight: 700;
+  font-size: 32px;
+  margin: 10px 0 20px;
+}
+.blog-card {
+  height: 400px !important;
+  display: flex !important;
+  max-width: 400px !important;
+}
+
+.card-desc {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.imgg{
+  height: 100% !important;
 }
