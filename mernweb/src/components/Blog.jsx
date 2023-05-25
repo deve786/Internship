@@ -42,7 +42,7 @@ const Blog = () => {
           <div className="row mt-5">
             
               {postSlice.map((postSlice) => (
-                <div className="col-md-4" >
+                <div className="col-md-4" key={post.id}>
                   <div className="card p-3 blog-card">
                   <img
                         src={postSlice.mainImage.asset.url}
