@@ -68,6 +68,3 @@ img {
 #allblog{
   padding: 20px !important;
 }
-.dropdown-toggle::after {
-  display: none;
-}
