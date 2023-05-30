@@ -49,22 +49,33 @@ img {
   align-items: center !important;
 }
 
-.imgg{
+.imgg {
   height: 100% !important;
 }
 
-.btnHvr{
+.btnHvr {
   text-decoration: none;
   color: #fff;
 }
-.btnHvr:hover{
+.btnHvr:hover {
   text-decoration: none;
   color: #000 !important;
   background-color: #fff !important;
 }
-.allblog{
+.allblog {
   margin-top: 10px !important;
 }
-#allblog{
+#allblog {
   padding: 20px !important;
+}
+.head-image {
+  position: relative;
+  color: white;
+  background-color: aqua;
+}
+.banner{
+  max-height: 450px !important;
+ height: 450px !important;
+ width:100% !important;
+ background-size:cover
 }

@@ -64,7 +64,7 @@ const Navbar = () => {
 
                   <Dropdown.Menu show={dropdownOpen.dropdownOpen}>
                     <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">
+                    <Dropdown.Item href="/action-2">
                       Another action
                     </Dropdown.Item>
                     <Dropdown.Item href="#/action-3">

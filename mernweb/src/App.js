@@ -17,6 +17,9 @@ import AllBlog from './components/AllBlog';
 import BlogDetail from './pages/BlogDetail'
 import Blogs from './pages/Blogs'
 import Error from './pages/Error'  
+
+import Article from './components/Article';
+import Industry from './components/Industry';
 function App() {
   
   return (
@@ -36,6 +39,8 @@ function App() {
         {/* <Route path="/" exact element={<Homepage/>}/> */}
         <Route path="/blog/:slug" element={<BlogDetail/>}/>
         <Route path="/blogs" element={<Blogs/>}/>  
+        <Route path="/service" element={<Article/>}/>  
+        <Route path="/industry" element={<Industry/>}/>  
         
         <Route path="/*" element={<Error/>}/> 
         
