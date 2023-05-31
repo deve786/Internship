@@ -1,124 +1,71 @@
-// import { Dropdown } from "bootstrap";
-import Dropdown from "react-bootstrap/Dropdown";
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import  './Navbar.css'
-// import Dropdown from './Dropdown.js';
-// import Button from 'react-bootstrap/Button';
-// import Image from 'react-bootstrap/Image';
-// import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import React, { useState } from 'react';
+import './Navbar.css';
 
 const Navbar = () => {
-  // function TriggerRendererProp() {
-    const [dropdownOpen, setdropdownOpen] = useState('false')
+  
+
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light shadow">
-        <div className="container">
-          <NavLink
-            className="navbar-toggler"
-            type="NavLink"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </NavLink>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto m-2 mb-2 mb-lg-0">
-              <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/">
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                {/* <OverlayTrigger */}
-                {/* placement="bottom" */}
-                {/* overlay={<Tooltip id="button-tooltip-2">Check out this avatar</Tooltip>} */}
-                {/* > */}
-                {/* {({ ref, ...triggerHandler }) => ( */}
-                {/* <Button */}
-                {/* variant="light" */}
-                {/* {...triggerHandler} */}
-                {/* className="d-inline-flex align-items-center" */}
-                {/* > */}
-                {/* <Image */}
-                {/* ref={ref} */}
-                {/* roundedCircle */}
-                {/* src="holder.js/20x20?text=J&bg=28a745&fg=FFF" */}
-                {/* /> */}
+    <nav className="navbar">
+      {/* <div className="navbar-logo">
+        <a href="/" className="active"><img src="logoagc.png" alt="Logo" className="logo-image" /></a>
+      </div> */}
+      
+        <ul className="navbar-items navbar-nav me-auto mb-2 mb-lg-0" >
+          <li className="nav-item">
+            <a href="/" className="active"><img src="logoagc.png" alt="Logo" className="logo-image" /></a>
+          </li>
+          <li className="nav-item dropdown">
+            <a href="#" className="dropbtn">Industries</a>
+            <div className="dropdown-content">
+              <div className="grid-container">
+                <div className="grid-row">
+                  <a href="#">Banking and Finance</a>
+                  <a href="#">Defense</a>
+                  <a href="#">EduTech</a>
+                  <a href="#">Pharmaceuticals</a>
+                  <a href="#">Industrial Automation</a>
+                </div>
+                <div className="grid-row">
+                  <a href="#">FMCG</a>
+                  <a href="#">Project Management</a>
+                  <a href="#">Cloud Computing</a>
+                  <a href="#">Blockchain</a>
+                  <a href="#">Data Science</a>
+                </div>
+                <div className="grid-row">
+                  <a href="#">AI/ML projects</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li className="nav-item dropdown">
+            <a href="#" className="dropbtn">Services</a>
+            <div className="dropdown-content">
+              <a href="#">Management Consulting</a>
+              <a href="#">Technology Consulting</a>
+            </div>
+          </li>
+          <li className="nav-item dropdown">
+            <a href="#" className="dropbtn">Carrier</a>
+            <div className="dropdown-content">
+              <a href="#">Home</a>
+              <a href="#">Students</a>
+              <a href="/job">Jobs</a>
+            </div>
+          </li>
+          <li className="nav-item">
+            <a href="/about">About</a>
+          </li>
+          <li className="nav-item">
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      
+      
 
-                <Dropdown
-                  onMouseEnter={(e) => setdropdownOpen({ dropdownOpen: true })}
-                  onMouseLeave={(e) => setdropdownOpen({ dropdownOpen: false })}
-                >
-                  <Dropdown.Toggle
-                    className="nav-link"
-                    variant=".text-black-50"
-                    id="dropdown-basic"
-                  >
-                    Services
-                  </Dropdown.Toggle>
-
-                  <Dropdown.Menu show={dropdownOpen.dropdownOpen}>
-                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    <Dropdown.Item href="/action-2">
-                      Another action
-                    </Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">
-                      Something else
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-
-                {/* </Button> */}
-                {/* )} */}
-                {/* </OverlayTrigger> */}
-              </li>
-
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/blog">
-                  Blog
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/about">
-                  About
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/career">
-                  Career
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/contact">
-                  Contact
-                </NavLink>
-              </li>
-            </ul>
-            <NavLink className="navbar-brand fw-bolder fs-4 mx-auto" to="/">
-              Aysdev Global Consultancy
-            </NavLink>
-            <NavLink
-              to="/login"
-              className="btn btn-outline-primary ms-auto px-4 rounded-pill "
-            >
-              <i className="fa fa-sign-in me-2"></i>Login
-            </NavLink>
-            <NavLink
-              to="/register"
-              className="btn btn-outline-primary ms-2 px-4 rounded-pill "
-            >
-              <i className="fa fa-user-plus me-2"></i>Register
-            </NavLink>
-          </div>
-        </div>
-      </nav>
-    </div>
+    </nav>
   );
-};
+}
 
 export default Navbar;
+

@@ -1,31 +1,23 @@
-import React from "react";
+import React from 'react';
+import './about.css';
 
 const About = () => {
-    return(
-        <div>
-            <section id="about">
-                <div className="container my-5 py-5">
-                    <div className="row">
-                        <div className="col-md-6">
-                            <img src="about1.png" alt="About" className="w-75 mt-5" />
-                        </div>
-                        <div className="col-md-6">
-                           <h3 className="fs-5 mb-0">About</h3>
-                           <h1 className="display-6 mb-2">Who <b>We</b> Are</h1> 
-                           <hr className="w-50" />
-                           <p className="lead mb-4">
-                            Lorem ipsum, dolar sit amet consectetur adipisicing elit. possimus, inventore voluptates voluptatibus sed doloremque a voluptate fuga in error adipisci autem sint accusamus minima iste officia reiciendis cupiditate eum tempora perferendis quis assumenda? quasi repellat, incidunt at natus quia hic ut officiis, optio id molestiae explicabo vero eos, numquam doloremaque.
-                            Lorem ipsum, dolar sit amet consectetur adipisicing elit. possimus, inventore voluptates voluptatibus sed doloremque a voluptate fuga in error adipisci autem sint accusamus minima iste officia reiciendis cupiditate eum tempora perferendis quis assumenda? quasi repellat, incidunt at natus quia hic ut officiis, optio id molestiae explicabo vero eos, numquam doloremaque.
-                           </p>
-                           <button className="btn btn-primary rounded-pill px-4 py-2">Get Started</button>
-                           <button className="btn btn-outline-primary rounded-pill px-4 py-2 ms-2">Contact Us</button>
-                        </div>
-                    </div>
-                </div>
-            </section>   
-        </div>
-        
-    );
-}
+  return (
+    <div className="about-container">
+        <img src="aboutus.png" alt="Banner" className="banner-image" />
+      <h2 className="about-heading">About Us</h2>
+      <p className="about-paragraph">
+        Aysdev Global Consultancy LLP is a leading global provider of professional services dedicated to helping organizations achieve growth, innovation, and success. With a team of talented professionals, we offer a wide range of services including consulting, strategy, and technology solutions.
+      </p>
+      <p className="about-paragraph">
+        We are committed to delivering exceptional value to our clients and assisting them in solving their most complex challenges. Our expertise spans across various industries, and we strive to provide insights, guidance, and innovative solutions that drive business transformation.
+      </p>
+      <p className="about-paragraph">
+        At Aysdev Global Consultancy LLP, we prioritize collaboration, integrity, and client satisfaction. We work closely with our clients to understand their unique needs and tailor our services to meet their specific goals. Our dedication to excellence and continuous improvement sets us apart as a trusted partner for organizations worldwide.
+      </p>
+      <a className="about-link" href="/contact">Contact us</a> to learn more about how we can assist your organization.
+    </div>
+  );
+};
 
 export default About;

@@ -1,0 +1,62 @@
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .about-paragraph {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .about-link {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .about-link:hover {
+    color: #0056b3;
+  }
+  
+  /* Additional effects */
+  
+  .about-container {
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: fade-in 0.5s ease-in-out forwards, move-up 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes move-up {
+    0% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .banner-image {
+    width: 100%;
+    max-height: 300px; /* Adjust the maximum height as needed */
+    object-fit: cover;
+    margin-bottom: 20px; /* Add spacing between the image and content */
+  }

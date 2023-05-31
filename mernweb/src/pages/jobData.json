@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "title": "Software Engineer",
+    "company": "ABC Technologies",
+    "location": "San Francisco, CA",
+    "description": "We are seeking a talented software engineer to join our team...",
+    "requirements": [
+      "Bachelor's degree in Computer Science or related field",
+      "3+ years of experience with JavaScript and React",
+      "Strong problem-solving skills",
+      "Experience with Agile development methodologies"
+    ],
+    "salary": "$100,000 - $120,000",
+    "datePosted": "2023-05-15"
+  },
+  {
+    "id": 2,
+    "title": "Product Manager",
+    "company": "XYZ Corporation",
+    "location": "New York, NY",
+    "description": "We are looking for an experienced product manager to...",
+    "requirements": [
+      "Bachelor's degree in Business or related field",
+      "5+ years of product management experience",
+      "Strong analytical and strategic thinking skills",
+      "Experience with Agile product development"
+    ],
+    "salary": "$120,000 - $150,000",
+    "datePosted": "2023-05-18"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Designer",
+    "company": "PQR Designs",
+    "location": "Seattle, WA",
+    "description": "We are searching for a talented UI/UX designer...",
+    "requirements": [
+      "Bachelor's degree in Design or related field",
+      "Proficiency in design tools such as Sketch or Figma",
+      "Strong understanding of user-centered design principles",
+      "Experience conducting user research and usability testing"
+    ],
+    "salary": "$80,000 - $100,000",
+    "datePosted": "2023-05-20"
+  },
+  {
+    "id": 4,
+    "title": "Data Scientist",
+    "company": "Data Analytics Co.",
+    "location": "Chicago, IL",
+    "description": "We are seeking a skilled data scientist to join our analytics team...",
+    "requirements": [
+      "Master's or Ph.D. in Statistics, Data Science, or related field",
+      "Proficiency in Python and R programming languages",
+      "Experience with machine learning algorithms and statistical modeling",
+      "Strong problem-solving and data analysis skills"
+    ],
+    "salary": "$90,000 - $120,000",
+    "datePosted": "2023-05-22"
+  },
+  {
+    "id": 5,
+    "title": "Marketing Manager",
+    "company": "Marketing Solutions Inc.",
+    "location": "Los Angeles, CA",
+    "description": "We are looking for a creative and results-driven marketing manager...",
+    "requirements": [
+      "Bachelor's degree in Marketing, Business, or related field",
+      "5+ years of marketing experience",
+      "Proficiency in digital marketing strategies and tools",
+      "Strong communication and leadership skills"
+    ],
+    "salary": "$80,000 - $100,000",
+    "datePosted": "2023-05-25"
+  },
+  {
+    "id": 6,
+    "title": "Frontend Developer",
+    "company": "Web Solutions Co.",
+    "location": "Austin, TX",
+    "description": "We are hiring a frontend developer with experience in...",
+    "requirements": [
+      "Bachelor's degree in Computer Science or related field",
+      "Proficiency in HTML, CSS, and JavaScript",
+      "Experience with frontend frameworks such as React or Vue",
+      "Familiarity with version control systems (e.g., Git)"
+    ],
+    "salary": "$80,000 - $100,000",
+    "datePosted": "2023-05-28"
+  },
+  {
+    "id": 7,
+    "title": "Graphic Designer",
+    "company": "Design Agency Inc.",
+    "location": "Miami, FL",
+    "description": "We are looking for a talented graphic designer to join our team...",
+    "requirements": [
+      "Bachelor's degree in Graphic Design or related field",
+      "Proficiency in design software such as Adobe Creative Suite",
+      "Strong portfolio showcasing design skills and creativity",
+      "Excellent attention to detail and time management skills"
+    ],
+    "salary": "$60,000 - $80,000",
+    "datePosted": "2023-05-30"
+  },
+  {
+    "id": 8,
+    "title": "Data Analyst",
+    "company": "Analytics Solutions Ltd.",
+    "location": "Toronto, ON",
+    "description": "We are seeking a data analyst to provide insights and analysis...",
+    "requirements": [
+      "Bachelor's degree in Statistics, Mathematics, or related field",
+      "Proficiency in SQL and data visualization tools",
+      "Experience with data analysis and reporting",
+      "Strong analytical and problem-solving skills"
+    ],
+    "salary": "$70,000 - $90,000",
+    "datePosted": "2023-06-02"
+  },
+  {
+    "id": 9,
+    "title": "Sales Manager",
+    "company": "Sales Solutions Co.",
+    "location": "Dallas, TX",
+    "description": "We are hiring a skilled sales manager to lead our sales team...",
+    "requirements": [
+      "Bachelor's degree in Business, Marketing, or related field",
+      "5+ years of sales experience",
+      "Proven track record of meeting sales targets",
+      "Excellent leadership and communication skills"
+    ],
+    "salary": "$90,000 - $120,000",
+    "datePosted": "2023-06-05"
+  },
+  {
+    "id": 10,
+    "title": "Full Stack Developer",
+    "company": "Tech Solutions Ltd.",
+    "location": "London, UK",
+    "description": "We are seeking a full stack developer to work on...",
+    "requirements": [
+      "Bachelor's degree in Computer Science or related field",
+      "Proficiency in both frontend and backend technologies",
+      "Experience with frameworks such as React, Node.js, and Express",
+      "Knowledge of databases and SQL"
+    ],
+    "salary": "$80,000 - $100,000",
+    "datePosted": "2023-06-08"
+  },
+  {
+    "id": 11,
+    "title": "HR Manager",
+    "company": "Human Resources Inc.",
+    "location": "Sydney, Australia",
+    "description": "We are looking for an experienced HR manager to oversee...",
+    "requirements": [
+      "Bachelor's degree in Human Resources, Business, or related field",
+      "5+ years of HR management experience",
+      "Knowledge of employment laws and regulations",
+      "Excellent interpersonal and communication skills"
+    ],
+    "salary": "$90,000 - $110,000",
+    "datePosted": "2023-06-10"
+  },
+  {
+    "id": 12,
+    "title": "Quality Assurance Engineer",
+    "company": "Software Solutions Co.",
+    "location": "Berlin, Germany",
+    "description": "We are seeking a quality assurance engineer to ensure...",
+    "requirements": [
+      "Bachelor's degree in Computer Science or related field",
+      "Experience in software testing and quality assurance",
+      "Knowledge of test automation frameworks and tools",
+      "Strong attention to detail and problem-solving skills"
+    ],
+    "salary": "$70,000 - $90,000",
+    "datePosted": "2023-06-12"
+  },
+  {
+    "id": 13,
+    "title": "Content Writer",
+    "company": "Content Marketing Agency",
+    "location": "Vancouver, BC",
+    "description": "We are looking for a skilled content writer to create engaging...",
+    "requirements": [
+      "Bachelor's degree in English, Journalism, or related field",
+      "Excellent writing and editing skills",
+      "Experience in content creation for digital platforms",
+      "Ability to research and write on various topics"
+    ],
+    "salary": "$50,000 - $70,000",
+    "datePosted": "2023-06-15"
+  },
+  {
+    "id": 14,
+    "title": "Financial Analyst",
+    "company": "Finance Solutions Ltd.",
+    "location": "Paris, France",
+    "description": "We are seeking a financial analyst to provide financial insights...",
+    "requirements": [
+      "Bachelor's degree in Finance, Accounting, or related field",
+      "Strong analytical and financial modeling skills",
+      "Experience with financial forecasting and reporting",
+      "Proficiency in Excel and financial software"
+    ],
+    "salary": "$70,000 - $90,000",
+    "datePosted": "2023-06-18"
+  },
+  {
+    "id": 15,
+    "title": "Project Manager",
+    "company": "Project Management Solutions",
+    "location": "Madrid, Spain",
+    "description": "We are hiring a project manager to oversee and...",
+    "requirements": [
+      "Bachelor's degree in Business, Engineering, or related field",
+      "Proven experience in project management",
+      "Strong organizational and leadership skills",
+      "Excellent communication and interpersonal skills"
+    ],
+    "salary": "$80,000 - $100,000",
+    "datePosted": "2023-06-20"
+  },
+  {
+    "id": 16,
+    "title": "Network Engineer",
+    "company": "Network Solutions Inc.",
+    "location": "Tokyo, Japan",
+    "description": "We are seeking a network engineer to design, implement...",
+    "requirements": [
+      "Bachelor's degree in Computer Science, Engineering, or related field",
+      "Experience in network design and implementation",
+      "Knowledge of networking protocols and technologies",
+      "Certifications such as CCNA or CCNP are a plus"
+    ],
+    "salary": "$90,000 - $120,000",
+    "datePosted": "2023-06-22"
+  },
+  {
+    "id": 17,
+    "title": "Business Analyst",
+    "company": "Business Solutions Co.",
+    "location": "Mumbai, India",
+    "description": "We are looking for a business analyst to analyze...",
+    "requirements": [
+      "Bachelor's degree in Business, Finance, or related field",
+      "Experience in business analysis and requirements gathering",
+      "Strong analytical and problem-solving skills",
+      "Knowledge of business process modeling and tools"
+    ],
+    "salary": "$70,000 - $90,000",
+    "datePosted": "2023-06-25"
+  },
+  {
+    "id": 18,
+    "title": "Operations Manager",
+    "company": "Operations Solutions Ltd.",
+    "location": "Dubai, UAE",
+    "description": "We are hiring an operations manager to oversee...",
+    "requirements": [
+      "Bachelor's degree in Business, Operations Management, or related field",
+      "5+ years of experience in operations management",
+      "Strong leadership and decision-making skills",
+      "Excellent problem-solving and communication skills"
+    ],
+    "salary": "$90,000 - $110,000",
+    "datePosted": "2023-06-28"
+  },
+  {
+    "id": 19,
+    "title": "Mobile App Developer",
+    "company": "App Development Co.",
+    "location": "Singapore",
+    "description": "We are seeking a skilled mobile app developer to...",
+    "requirements": [
+      "Bachelor's degree in Computer Science or related field",
+      "Experience in mobile app development for iOS and Android",
+      "Proficiency in programming languages such as Swift or Kotlin",
+      "Knowledge of mobile app UI/UX principles"
+    ],
+    "salary": "$80,000 - $100,000",
+    "datePosted": "2023-06-30"
+  },
+  {
+    "id": 20,
+    "title": "Customer Service Representative",
+    "company": "Customer Support Solutions",
+    "location": "Toronto, ON",
+    "description": "We are looking for a customer service representative...",
+    "requirements": [
+      "Excellent communication and interpersonal skills",
+      "Strong problem-solving and customer handling skills",
+      "Ability to multitask and work in a fast-paced environment",
+      "Experience in a customer service role is a plus"
+    ],
+    "salary": "$40,000 - $60,000",
+    "datePosted": "2023-07-02"
+  }
+]
