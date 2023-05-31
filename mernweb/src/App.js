@@ -42,8 +42,8 @@ function App() {
         {/* <Route path="/" exact element={<Homepage/>}/> */}
         <Route path="/blog/:slug" element={<BlogDetail/>}/>
         <Route path="/blogs" element={<Blogs/>}/>  
-        <Route path="/service" element={<Article/>}/>  
-        <Route path="/industry" element={<Industry/>}/>  
+        <Route path="/:slug" element={<Article/>}/>  
+        <Route path="/:slug" element={<Industry/>}/>  
         <Route path="/job" element={<JobList/>}/> 
         <Route path="/career" element={<CareerHome/>}/>
         <Route path="/*" element={<Error/>}/> 

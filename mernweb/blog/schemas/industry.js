@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'industry',
-  title: 'Insdustry',
+  title: 'Industry',
   type: 'document',
   fields: [
     defineField({
@@ -18,6 +18,11 @@ export default defineType({
         source: 'title',
         maxLength: 96,
       },
+    }),
+    defineField({
+      name: 'heading',
+      title: 'Heading',
+      type: 'string',
     }),
     
     defineField({
