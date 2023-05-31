@@ -20,7 +20,7 @@ const CareerHome = () => {
 
   return (
     <div>
-      <header>
+      <header className='header'>
         <h1>Welcome to Our Careers Page</h1>
       </header>
 
