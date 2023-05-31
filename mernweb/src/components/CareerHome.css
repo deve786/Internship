@@ -1,0 +1,158 @@
+/* HomePage.css */
+
+/* Add a blue and white color palette */
+:root {
+    --primary-color: #007bff !important; /* Blue */
+    --secondary-color: #ffffff; /* White */
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    /* background-color: var(--primary-color); */
+    background-image: url("../../public/bg.jpg");
+    padding: 20px;
+    animation: fade-in 1s ease-in-out;
+    height: 300px;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  h1{
+    margin-top: 90px !important;
+    font-size: 10px;
+  }
+  h1,h2{
+    margin-top: 120px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    background-image: linear-gradient(90deg, rgb(0, 101, 219) 30%, rgb(0, 212, 255) 100%) !important;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+  }
+  
+  
+  .main-content {
+    padding: 40px 0;
+    animation: slide-up 1s ease-in-out;
+  }
+  
+  @keyframes slide-up {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .company-description,
+  .content-data {
+    margin-bottom: 40px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    animation: fade-in 1s ease-in-out;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    animation: fade-in 1s ease-in-out;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    animation: slide-up 1s ease-in-out;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    max-height: 200px;
+    margin: 0 10px;
+    animation: zoom-in 1s ease-in-out;
+    width: 100%;
+    max-height: 300px; /* Adjust the maximum height as needed */
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  @keyframes zoom-in {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .join-us {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    animation: fade-in 1s ease-in-out;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+  }
+  
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 0;
+    background-color: var(--primary-color);
+    animation: progress-bar-fill 2s ease-in-out forwards;
+  }
+  
+  @keyframes progress-bar-fill {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }

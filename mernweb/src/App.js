@@ -21,6 +21,8 @@ import Error from './pages/Error'
 import Article from './components/Article';
 import Industry from './components/Industry';
 import JobList from './pages/JobList';
+import CareerHome from './components/CareerHome';
+// import Video from '../components/Video';
 function App() {
   
   return (
@@ -43,8 +45,9 @@ function App() {
         <Route path="/service" element={<Article/>}/>  
         <Route path="/industry" element={<Industry/>}/>  
         <Route path="/job" element={<JobList/>}/> 
+        <Route path="/career" element={<CareerHome/>}/>
         <Route path="/*" element={<Error/>}/> 
-        
+         
       </Routes>
       
       

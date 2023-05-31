@@ -41,14 +41,14 @@ const Navbar = () => {
           <li className="nav-item dropdown">
             <a href="#" className="dropbtn">Services</a>
             <div className="dropdown-content">
-              <a href="#">Management Consulting</a>
+              <a href="/service">Management Consulting</a>
               <a href="#">Technology Consulting</a>
             </div>
           </li>
           <li className="nav-item dropdown">
             <a href="#" className="dropbtn">Carrier</a>
             <div className="dropdown-content">
-              <a href="#">Home</a>
+              <a href="/career">Home</a>
               <a href="#">Students</a>
               <a href="/job">Jobs</a>
             </div>
