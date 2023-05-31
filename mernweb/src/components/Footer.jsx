@@ -71,8 +71,8 @@ const Footer = () => {
           React.createElement(
             'li',
             null,
-            React.createElement('a', { href: 'https://twitter.com/aysdev', target: '_blank', rel: 'noopener noreferrer' },
-              React.createElement(FontAwesomeIcon, { icon: faTwitter })
+            React.createElement('a', { href: 'https://twitter.com/aysdev', target:'_blank', rel: 'noopener noreferrer' },
+              React.createElement(FontAwesomeIcon, { icon: faTwitter})
             )
           ),
           React.createElement(
