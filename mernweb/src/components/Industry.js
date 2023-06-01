@@ -38,7 +38,7 @@ console.log(industry)
     {industry.map((industry) => (
       <>
         <section className="banner" key={industry.slug.current}>
-          <img src={industry.mainImage.asset.url} alt="Banner" />
+          {/* <img src={industry.mainImage.asset.url} alt="Banner" /> */}
         </section>
         <header>
           <h1>{industry.title}</h1>

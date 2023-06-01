@@ -3,11 +3,11 @@ import {
   CaretLeftOutlined,
   BookOutlined,
 } from "@ant-design/icons";
-import { AiOutlineDashboard } from "react-icons/ai";
-import { FaBloggerB } from "react-icons/fa";
-import { MdWorkOutline } from "react-icons/md";
-import { GrServices } from "react-icons/gr";
-import { GrCircleInformation } from "react-icons/gr";
+// import { AiOutlineDashboard } from "react-icons/ai";
+// import { FaBloggerB } from "react-icons/fa";
+// import { MdWorkOutline } from "react-icons/md";
+// import { GrServices } from "react-icons/gr";
+// import { GrCircleInformation } from "react-icons/gr";
 import { Button, Layout, Menu, theme } from "antd";
 import { React, useEffect, useState } from "react";
 
@@ -29,12 +29,8 @@ const Courses = () => {
           *[_type == "courses"] {
             key,
             icon,
-            label,
-            "children": children[]-> {
-              key,
-              icon,
-              label
-            }
+            title,
+            slug
           }
         `);
         setMenuItems(response);
@@ -61,16 +57,10 @@ const Courses = () => {
             }
           }}
           items={menuItems.map((menuItem) => ({
-            key: menuItem.key,
+            key: menuItem.slug.current,
             icon: menuItem.icon,
-            label: menuItem.label,
-            children: menuItem.children
-              ? menuItem.children.map((child) => ({
-                  key: child.key,
-                  icon: child.icon,
-                  label: child.label,
-                }))
-              : undefined,
+            label: menuItem.title,
+            
           }))}
         />
       </Sider>

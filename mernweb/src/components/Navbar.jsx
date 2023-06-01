@@ -36,7 +36,7 @@ const Navbar = () => {
               {industries.map(
                 (industry, index) =>
                   index % 5 === 0 && (
-                    <div key={industry.slug} className="grid-row">
+                    <div key={industry.slug.current} className="grid-row">
                       {industries.slice(index, index + 5).map((item) => (
                         <a key={item.slug.current} href={`/${item.slug.current}`}>
                           {item.title}
@@ -69,7 +69,7 @@ const Navbar = () => {
           </a>
           <div className="dropdown-content">
             <a href="/career">Home</a>
-            <a href="#">Students</a>
+            <a href="/courses">Students</a>
             <a href="/job">Jobs</a>
           </div>
         </li>
