@@ -22,6 +22,7 @@ import Article from './components/Article';
 import Industry from './components/Industry';
 import JobList from './pages/JobList';
 import CareerHome from './components/CareerHome';
+import Courses from './components/Courses';
 // import Video from '../components/Video';
 function App() {
   
@@ -47,7 +48,7 @@ function App() {
         <Route path="/job" element={<JobList/>}/> 
         <Route path="/career" element={<CareerHome/>}/>
         <Route path="/*" element={<Error/>}/> 
-         
+        <Route path="/courses" element={<Courses/>}/> 
       </Routes>
       
       
