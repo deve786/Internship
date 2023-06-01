@@ -1,5 +1,5 @@
 import React from "react";
-import "./Article.css"; // Import the CSS file for Article component
+// import "./Article.css"; // Import the CSS file for Article component
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -14,46 +14,48 @@ const CourseDetails = () => {
   useEffect(() => {
     client
       .fetch(
-        `*[slug.current=="${slug}"]{
+        `*[_type=='courses']{
           title,
-          
-          body,
-          
-          
-          mainImage {
-            asset -> {
-              _id,
-              url
-            },
-            
-            alt
+          slug,body,mainImage{
+              asset ->{
+                  _id,
+                  url
+              },
+              alt
           }
-          
-    }`
+      }`
       )
-      .then((data) => setPageData(data[0]))
+      .then((data) => setPageData(data))
       .catch((err) => console.error(err));
-  }, [slug]);
+  }, []);
   return (
-    <div className="article">
-      <>
-        <section className="banner">
-          {/* <img src={pageData.mainImage.asset.url} alt={pageData.title} /> */}
-        </section>
-        <header>
-          <h1>{pageData.title}</h1>
-          <p className="date">Published: May 30, 2023</p>
-        </header>
-        <div className="content">
-          <p>
-            <BlockContent
-              blocks={pageData.body}
-              projectI="40rf11bs"
-              dataset="production"
-            />
-          </p>
-        </div>
-      </>
+    <div className="article1">
+      {pageData.map((pageData) => (
+        <div key={pageData.slug.current}>
+        <div className="crd">
+          <div class="card p-3 crds">
+
+            <img src="blog1.jpg" className="card-img-top" alt={pageData.title} />
+            <div class="card-body text-center">
+              <h5 class="card-title mb-3 fs-4 fw-bold">{pageData.title}</h5>
+              <p class="card-text lead">
+                <BlockContent
+                  blocks={pageData.body}
+                  projectI="40rf11bs"
+                  dataset="production"
+                />
+              </p>
+              <a href="/" className="btn btn-primary">Read More</a>
+
+            </div>
+          </div>
+        </div></div>
+      ))}
+
+
+
+
+
     </div>
   );
 };
