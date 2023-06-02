@@ -67,7 +67,7 @@ const Home = () => {
           </section>
         </div>
       ))}
-      
+  
       <Blog />
       <Contact />
     </div>
