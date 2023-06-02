@@ -30,9 +30,9 @@ const AllBlog = () => {
           {post.map((post) => (
             <div className="col-md-4 allblog" key={post.slug.current}>
               <div className="card p-3 blog-card">
-                <img
+                <img 
                   src={post.mainImage.asset.url}
-                  className="card-img-top"
+                  className="card-img-top cardImg"
                   alt={post.title}
                 />
                 <div className="card-body text-center card-desc">
