@@ -6,6 +6,8 @@ import client from "../client";
 const Navbar = () => {
   const [service, setService] = useState([]);
   const [industries, setIndustries] = useState([]);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // State variable for mobile menu
+
   useEffect(() => {
     const fetchData = async () => {
       const query1 = `*[_type == "service"] { title, slug }`;
@@ -19,9 +21,14 @@ const Navbar = () => {
     fetchData();
   }, []);
 
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
     <nav className="navbar">
-      <ul className="navbar-items navbar-nav me-auto mb-2 mb-lg-0">
+      <ul className={`navbar-items navbar-nav me-auto mb-2 mb-lg-0 ${mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
         <li className="nav-item">
           <a href="/" className="active">
             <img src="logoagc.png" alt="Logo" className="logo-image" />
@@ -29,7 +36,7 @@ const Navbar = () => {
         </li>
         <li className="nav-item dropdown">
           <a href="#" className="dropbtn">
-            Industries
+            Indusstries
           </a>
           <div className="dropdown-content">
             <div className="grid-container">
@@ -80,6 +87,9 @@ const Navbar = () => {
           <a href="#">Contact</a>
         </li>
       </ul>
+      <div className="mobile-menu-icon" onClick={toggleMobileMenu}>
+        {/* Add your mobile menu icon, e.g., hamburger icon */}
+      </div>
     </nav>
   );
 };

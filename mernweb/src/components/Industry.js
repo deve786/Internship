@@ -3,31 +3,27 @@ import './Industry.css';
 import client from "../client";
 import BlockContent from "@sanity/block-content-to-react";
 const Industry = () => {
-  const [scrollProgress, setScrollProgress] = useState(0);
+  
   const [industry, setIndustry] = useState([]);
 
   useEffect(() => {
     client
       .fetch(
         `*[_type == "industry"]{
-          body,slug, title,mainImage{
-                asset ->{
-                    _id,
-                    url
-                },
-              },
+          mainImage{
+            asset ->{
+                _id,
+                url
+            },
+          },
+          body,slug, title,
         }`
       )
       .then((data) => setIndustry(data))
       .catch(console.error);
-    const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (window.pageYOffset / totalHeight) * 100;
-      setScrollProgress(progress);
-    };
+   
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
   }, []);
   
 
@@ -38,20 +34,20 @@ console.log(industry)
     {industry.map((industry) => (
       <>
         <section className="banner" key={industry.slug.current}>
-          {/* <img src={industry.mainImage.asset.url} alt="Banner" /> */}
+          <img src={industry.mainImage.asset.url} alt={industry.title} />
         </section>
         <header>
-          <h1>{industry.title}</h1>
-          
+          <h1>{industry}</h1>
+          <img src={industry.mainImage.asset.url} alt={industry.title} />
         </header>
         <div className="content">
-          <p>
+          
             <BlockContent
               blocks={industry.body}
               projectI="40rf11bs"
               dataset="production"
             />
-          </p>
+          
         </div>
       </>
     ))}
