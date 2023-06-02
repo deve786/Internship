@@ -68,8 +68,6 @@ const Home = () => {
         </div>
       ))}
 
-      
-      
       <Blog />
       <Contact />
     </div>
