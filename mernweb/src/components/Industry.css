@@ -51,4 +51,7 @@
   .content p:last-child {
     margin-bottom: 0;
   }
-  
+  .card{
+    max-width: 90% !important;
+
+  }
