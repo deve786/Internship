@@ -161,7 +161,7 @@ const Navbar = () => {
 
         <li className="nav-item dropdown">
           <a href="#" className="dropbtn">
-            Carrier
+            Career
           </a>
           <div className="dropdown-content">
             <a href="/career">Home</a>
