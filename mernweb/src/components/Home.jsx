@@ -47,20 +47,7 @@ const Home = () => {
                       dataset="production"
                     />
                   </h1>
-                  <div className="buttons d-flex justify-content-center">
-                    <NavLink
-                      to="/contact"
-                      className="btn btn-light me-4 rounded-pill px-4 py-2"
-                    >
-                      Get Quote
-                    </NavLink>
-                    <NavLink
-                      to="/services"
-                      className="btn btn-outline-light rounded-pill px-4 py-2"
-                    >
-                      Our Services
-                    </NavLink>
-                  </div>
+                  
                 </div>
               </div>
             </div>

@@ -14,6 +14,7 @@ code {
 img {
   max-width: 100%;
   margin: auto;
+  height: 300px;
 }
 .blogimg {
   max-height: 300px;
