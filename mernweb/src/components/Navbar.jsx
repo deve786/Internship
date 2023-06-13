@@ -87,7 +87,7 @@
 // export default Navbar;
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import client from "../client";
+import client from "../createClient";
 import "./Navbar.css";
 
 const Navbar = () => {

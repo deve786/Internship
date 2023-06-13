@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import client from "../client";
+import client from "../createClient";
 import { Link } from "react-router-dom";
 function Blogs() {
   const [post, setPost] = useState([]);

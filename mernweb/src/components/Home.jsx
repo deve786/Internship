@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import Blog from "./Blog";
 import { useState } from "react";
 import { useEffect } from "react";
-import client from "../client";
+import client from "../createClient";
 import BlockContent from "@sanity/block-content-to-react";
 const Home = () => {
   const [banner, setBanner] = useState([]);

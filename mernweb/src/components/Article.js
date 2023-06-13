@@ -1,58 +1,49 @@
-import React from "react";
-import "./Article.css"; // Import the CSS file for Article component
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import "./Article.css";
 import { useParams } from "react-router-dom";
-import client from "../client";
+import client from "../createClient";
 import BlockContent from "@sanity/block-content-to-react";
 
 const Article = () => {
   const { slug } = useParams();
-  const [pageData, setPageData] = useState([]);
+  const [pageData, setPageData] = useState({});
 
   useEffect(() => {
     client
       .fetch(
         `*[slug.current=="${slug}"]{
-          title,
-          
-          body,
-          
-          
-          mainImage {
-            asset -> {
+          mainImage{
+            asset ->{
               _id,
               url
-            },
-            
-            alt
-          }
-          
-    }`
+            }
+          },
+          body,
+          slug,
+          title
+        }`
       )
       .then((data) => setPageData(data[0]))
       .catch((err) => console.error(err));
   }, [slug]);
+
+  if (!pageData) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="article">
-      <>
-        <section className="banner">
-          {/* <img src={pageData.mainImage.asset.url} alt={pageData.title} /> */}
-        </section>
-        <header>
-          <h1>{pageData.title}</h1>
-          <p className="date">Published: May 30, 2023</p>
-        </header>
-        <div className="content">
-          <p>
-            <BlockContent
-              blocks={pageData.body}
-              projectI="40rf11bs"
-              dataset="production"
-            />
-          </p>
-        </div>
-      </>
+      <section className="banner">
+        {pageData.mainImage && (
+          <img src={pageData.mainImage.asset.url} alt={pageData.title} />
+        )}
+      </section>
+      <header>
+        <h1>{pageData.title}</h1>
+      </header>
+      <div className="content">
+        <BlockContent blocks={pageData.body} />
+      </div>
     </div>
   );
 };

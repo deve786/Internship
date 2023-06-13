@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import client from '../client';
+import client from '../createClient';
 import { Link, useParams } from "react-router-dom";
 import BlockContent from "@sanity/block-content-to-react";
 // import { format, parseISO } from "date-fns";

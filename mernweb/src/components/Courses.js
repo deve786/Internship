@@ -11,7 +11,7 @@ import {
 import { Button, Layout, Menu, theme } from "antd";
 import { React, useEffect, useState } from "react";
 
-import client from "../client";
+import client from "../createClient";
 
 import { Outlet, useNavigate } from "react-router-dom";
 const { Header, Sider, Content } = Layout;

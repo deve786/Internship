@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import client from "../client";
+import client from "../createClient";
 import BlockContent from "@sanity/block-content-to-react";
 import Courses from "./Courses";
 

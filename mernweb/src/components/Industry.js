@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Industry.css';
-import client from "../client";
+import client from "../createClient";
 import BlockContent from "@sanity/block-content-to-react";
 const Industry = () => {
   
@@ -32,7 +32,7 @@ console.log(industry)
   return (
     <div className="article">
     {industry.map((industry) => (
-      <>
+      <div>
         <section className="banner" key={industry.slug.current}>
           <img src={industry.mainImage.asset.url} alt={industry.title} />
         </section>
@@ -49,7 +49,7 @@ console.log(industry)
             />
           
         </div>
-      </>
+      </div>
     ))}
   </div>
   );
