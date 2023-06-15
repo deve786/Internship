@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
-import "./Industry.css";
-import client from "../createClient";
-import BlockContent from "@sanity/block-content-to-react";
+import React, { useEffect, useState } from 'react';
+import './Industry.css';
+import client from '../createClient';
+import BlockContent from '@sanity/block-content-to-react';
+
 const Industry = () => {
   const [industry, setIndustry] = useState([]);
 
@@ -11,33 +12,33 @@ const Industry = () => {
         `*[_type == "industry"]{
           mainImage{
             asset ->{
-                _id,
-                url
+              _id,
+              url
             },
           },
-          body,slug, title,
+          body,
+          slug,
+          title,
         }`
       )
       .then((data) => setIndustry(data))
       .catch(console.error);
   }, []);
 
-  console.log(industry);
   return (
-    <div className="article">
+    <div className="industry-container">
       {industry.map((industry) => (
-        <div>
-          <section className="banner" key={industry.slug.current}>
+        <div className="industry-item" key={industry.slug.current}>
+          <section className="banner">
             <img src={industry.mainImage.asset.url} alt={industry.title} />
           </section>
-          <header>
-            <h1>{industry}</h1>
-            <img src={industry.mainImage.asset.url} alt={industry.title} />
-          </header>
           <div className="content">
+            <header>
+              <h1>{industry.title}</h1>
+            </header>
             <BlockContent
               blocks={industry.body}
-              projectI="40rf11bs"
+              projectId="40rf11bs"
               dataset="production"
             />
           </div>

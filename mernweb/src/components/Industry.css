@@ -1,54 +1,114 @@
 .article {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1104px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background-color: #007bff;
+  transition: width 0.3s ease-in-out;
+}
+
+.banner {
+  height: 300px;
+  /* Add any additional styles for the banner here */
+}
+
+.content {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  /* Add any additional styles for the content here */
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.date {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+blockquote {
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+p {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Add any additional styles for the content here */
+
+/* Example of additional styles */
+.content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Add hover effect to the banner */
+.banner:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Add animation to the content */
+.content {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 5px;
-    background-color: #007bff;
-    transition: width 0.3s ease-in-out;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .banner {
-    height: 300px;
-    
+}
+
+/* Add box-shadow to the article container */
+.article {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add smooth scrolling to the progress bar */
+.progress-bar {
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Add text selection color */
+.article ::selection {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Add responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .article {
+    padding: 10px;
   }
-  
-  .content {
-    margin-top: 20px;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
+
   h1 {
     font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
   }
-  
-  .date {
+
+  .content {
     font-size: 14px;
-    color: #888;
-    margin-bottom: 20px;
   }
-  
-  blockquote {
-    font-style: italic;
-    margin-bottom: 20px;
-  }
-  
-  p {
-    margin-bottom: 10px;
-  }
-  
-  /* Add any additional styles for the content here */
-  
-  /* Example of additional styles */
-  .content p:last-child {
-    margin-bottom: 0;
-  }
-  
+}

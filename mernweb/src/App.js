@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.css';
 // import Dropdown from 'bootstrap/js/src/dropdown';
 import Home from './components/Home';
@@ -8,7 +8,7 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-import {Route, Routes, useLocation} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 // import ERR from './components/ERR';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -26,29 +26,7 @@ import Courses from './components/Courses';
 import CourseDetails from './components/CourseDetails';
 // import Video from '../components/Video';
 function App() {
-  const location = useLocation();
-
-  useEffect(() => {
-    document.title = getPageTitle(location.pathname);
-  }, [location.pathname]);
-  function getPageTitle(pathname) {
-    switch (pathname) {
-      case '/about':
-        return 'About Page';
-      case '/contact':
-        return 'Contact Page';
-        case '/blog':
-        return 'Blogs';
-        case '/allblog':
-        return 'All Blogs';
-        case '/services':
-        return 'Services';
-        case '/contact':
-        return 'Contact Page';
-      default:
-        return 'AsyDev';
-    }
-  }
+  
   return (
     <>
       <Navbar />
@@ -65,7 +43,7 @@ function App() {
         <Route exact path="/services" element={<Services/>} />
         {/* <Route path="/" exact element={<Homepage/>}/> */}
         <Route path="/blog/:slug" element={<BlogDetail/>}/>
-        {/* <Route path="/blogs" element={<Blogs/>}/>   */}
+        <Route path="/blogs" element={<Blogs/>}/>  
         <Route path="/:slug" element={<Article/>}/>  
         <Route path="/:slug" element={<Industry/>}/>  
         <Route path="/job" element={<JobList/>}/> 
