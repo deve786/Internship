@@ -1,0 +1,310 @@
+
+
+@charset "UTF-8";body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif
+}
+
+code {
+    font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace
+}
+
+
+.about-carousel img {
+    height: 32rem;
+    object-fit: contain!important;
+    object-position: center
+}
+
+.overlay {
+    background: rgba(0,0,0,.75);
+    background: linear-gradient(180deg,transparent,rgba(0,0,0,.7));
+    height: 32rem;
+    position: absolute;
+    width: 100%
+}
+
+.ab-slideshow-caption {
+    background: rgba(0,0,0,.65);
+    padding: 5px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content
+}
+
+
+
+@media (prefers-reduced-motion:no-preference) {
+    :root {
+        scroll-behavior: smooth
+    }
+}
+
+@media (min-width: 1200px) {
+    .h1,h1 {
+        font-size:2.5rem
+    }
+}
+
+.h2,h2 {
+    font-size: calc(1.325rem + .9vw)
+}
+
+@media (min-width: 1200px) {
+    .h2,h2 {
+        font-size:2rem
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+    .h3,h3 {
+        font-size:1.75rem
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+    .h4,h4 {
+        font-size:1.5rem
+    }
+}
+
+
+caption {
+    color: #6c757d;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    text-align: left
+}
+
+
+
+.carousel {
+    position: relative
+}
+
+.carousel.pointer-event {
+    touch-action: pan-y
+}
+
+.carousel-inner {
+    overflow: hidden;
+    position: relative;
+    width: 100%
+}
+
+.carousel-inner:after {
+    clear: both;
+    content: "";
+    display: block
+}
+
+.carousel-item {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: none;
+    float: left;
+    margin-right: -100%;
+    position: relative;
+    transition: -webkit-transform .6s ease-in-out;
+    transition: transform .6s ease-in-out;
+    transition: transform .6s ease-in-out,-webkit-transform .6s ease-in-out;
+    width: 100%
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .carousel-item {
+        transition: none
+    }
+}
+
+.carousel-item-next,.carousel-item-prev,.carousel-item.active {
+    display: block
+}
+
+.active.carousel-item-end,.carousel-item-next:not(.carousel-item-start) {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%)
+}
+
+.active.carousel-item-start,.carousel-item-prev:not(.carousel-item-end) {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%)
+}
+
+.carousel-fade .carousel-item {
+    opacity: 0;
+    -webkit-transform: none;
+    transform: none;
+    transition-property: opacity
+}
+
+.carousel-fade .carousel-item-next.carousel-item-start,.carousel-fade .carousel-item-prev.carousel-item-end,.carousel-fade .carousel-item.active {
+    opacity: 1;
+    z-index: 1
+}
+
+.carousel-fade .active.carousel-item-end,.carousel-fade .active.carousel-item-start {
+    opacity: 0;
+    transition: opacity 0s .6s;
+    z-index: 0
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .carousel-fade .active.carousel-item-end,.carousel-fade .active.carousel-item-start {
+        transition: none
+    }
+}
+
+.carousel-control-next,.carousel-control-prev {
+    align-items: center;
+    background: 0 0;
+    border: 0;
+    bottom: 0;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    opacity: .5;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transition: opacity .15s ease;
+    width: 15%;
+    z-index: 1
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .carousel-control-next,.carousel-control-prev {
+        transition: none
+    }
+}
+
+.carousel-control-next:focus,.carousel-control-next:hover,.carousel-control-prev:focus,.carousel-control-prev:hover {
+    color: #fff;
+    opacity: .9;
+    outline: 0;
+    text-decoration: none
+}
+
+.carousel-control-prev {
+    left: 0
+}
+
+.carousel-control-next {
+    right: 0
+}
+
+.carousel-control-next-icon,.carousel-control-prev-icon {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    height: 2rem;
+    width: 2rem
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E")
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E")
+}
+
+.carousel-indicators {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    list-style: none;
+    margin-bottom: 1rem;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    z-index: 2
+}
+
+.carousel-indicators [data-bs-target] {
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 0;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+    box-sizing: initial;
+    cursor: pointer;
+    flex: 0 1 auto;
+    height: 3px;
+    margin-left: 3px;
+    margin-right: 3px;
+    opacity: .5;
+    padding: 0;
+    text-indent: -999px;
+    transition: opacity .6s ease;
+    width: 30px
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .carousel-indicators [data-bs-target] {
+        transition: none
+    }
+}
+
+.carousel-indicators .active {
+    opacity: 1
+}
+
+.carousel-caption {
+    bottom: 1.25rem;
+    color: #fff;
+    left: 15%;
+    padding-bottom: 1.25rem;
+    padding-top: 1.25rem;
+    position: absolute;
+    right: 15%;
+    text-align: center
+}
+
+.carousel-dark .carousel-control-next-icon,.carousel-dark .carousel-control-prev-icon {
+    -webkit-filter: invert(1) grayscale(100);
+    filter: invert(1) grayscale(100)
+}
+
+.carousel-dark .carousel-indicators [data-bs-target] {
+    background-color: #000
+}
+
+.carousel-dark .carousel-caption {
+    color: #000
+}
+
+
+
+.visually-hidden,.visually-hidden-focusable:not(:focus):not(:focus-within) {
+    clip: rect(0,0,0,0)!important;
+    border: 0!important;
+    height: 1px!important;
+    margin: -1px!important;
+    overflow: hidden!important;
+    padding: 0!important;
+    position: absolute!important;
+    white-space: nowrap!important;
+    width: 1px!important
+}
+
+.d-block {
+    display: block!important
+}
+
+
+
+.w-100 {
+    width: 100%!important
+}
+
