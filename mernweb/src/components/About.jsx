@@ -1,6 +1,6 @@
 import React from 'react';
 import './about.css';
-// import Scrollspy from 'react-scrollspy';
+import Scrollspy from 'react-scrollspy';
 import Slider from './Slider';
 
 // Install 'react-scrollspy' package: npm install react-scrollspy
@@ -14,13 +14,13 @@ function About() {
         
         <Slider />
       </div>
-      {/* <Scrollspy items={['section-mission', 'section-vision', 'section-team']} currentClassName="active">
+      <Scrollspy items={['section-mission', 'section-vision', 'section-team']} currentClassName="active">
         <nav className="navigation">
           <a href="#section-mission">Our Mission </a>
           <a href="#section-vision">Our Vision</a>
           <a href="#section-team">Our Team</a>
         </nav>
-      </Scrollspy> */}
+      </Scrollspy>
       <div className="container">
         <section id="section-mission" className="section">
           <h2 className="section-title">Our Mission</h2>
