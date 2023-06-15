@@ -16,7 +16,7 @@ function About() {
       </div>
       <Scrollspy items={['section-mission', 'section-vision', 'section-team']} currentClassName="active">
         <nav className="navigation">
-          <a href="#section-mission">Our Mission</a>
+          <a href="#section-mission">Our Mission </a>
           <a href="#section-vision">Our Vision</a>
           <a href="#section-team">Our Team</a>
         </nav>
