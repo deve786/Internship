@@ -1,6 +1,6 @@
 import React from 'react';
 import './about.css';
-import Scrollspy from 'react-scrollspy';
+// import Scrollspy from 'react-scrollspy';
 import Slider from './Slider';
 
 // Install 'react-scrollspy' package: npm install react-scrollspy
