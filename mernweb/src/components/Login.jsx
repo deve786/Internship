@@ -1,10 +1,21 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom';
-// import { useNavigate } from 'react-router-dom';
+import {React, useState } from 'react'
+import { NavLink, useLocation } from 'react-router-dom';
+import axios from 'axios';
+
 const Login = () => {
-    const handleClick = (e) => {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+    const location = useLocation()
+    async function handleClick (e){
         e.preventDefault();
-        window.location.replace('https://blogmanage.sanity.studio/desk');
+        try {
+            await axios.post('http://localhost:3000/login',{
+                email,password
+            }).then(res=>{alert(res.data.message)})
+            location("/")
+        } catch (e) {
+            
+        }
       };
     return (
         <div>
