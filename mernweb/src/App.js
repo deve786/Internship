@@ -24,6 +24,7 @@ import JobList from './pages/JobList';
 import CareerHome from './components/CareerHome';
 import Courses from './components/Courses';
 import CourseDetails from './components/CourseDetails';
+import Client from './components/Client'
 // import Video from '../components/Video';
 function App() {
   
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home/>} />
         <Route exact path="/about" element={<About/>} />
+        <Route exact path="/clients" element={<Client/>} />
         <Route exact path="/blog" element={<Blog/>} />
         <Route exact path="/contact" element={<Contact/>} />
         {/* <Route exact path="/*" element={<ERR/>} /> */}
