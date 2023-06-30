@@ -170,6 +170,9 @@ const Navbar = () => {
           </div>
         </li>
         <li className="nav-item">
+          <a href="/clients">Clients</a>
+        </li>
+        <li className="nav-item">
           <a href="/about">About</a>
         </li>
         <li className="nav-item">
