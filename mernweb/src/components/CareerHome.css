@@ -1,158 +1,178 @@
-/* HomePage.css */
-
-/* Add a blue and white color palette */
-:root {
-    --primary-color: #007bff !important; /* Blue */
-    --secondary-color: #ffffff; /* White */
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    margin: 0;
-    padding: 0;
-  }
-  
-  .header {
-    /* background-color: var(--primary-color); */
-    background-image: url("../../public/bg.jpg");
+/* Styling for career page */
+/* .career-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    animation: fade-in 1s ease-in-out;
-    height: 300px;
+    background-color: #f9f9f9;
   }
   
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  .content-division {
+    flex: 1 1 60%;
+    padding: 20px;
   }
-  h1{
-    margin-top: 90px !important;
-    font-size: 10px;
-  }
-  h1,h2{
-    margin-top: 120px;
+  
+  .image-division {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items:center
+
+  } */
+  
+  /* Text styles */
+  /* h2 {
     font-size: 24px;
     font-weight: bold;
-    color: var(--secondary-color);
-    background-image: linear-gradient(90deg, rgb(0, 101, 219) 30%, rgb(0, 212, 255) 100%) !important;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-  }
-  
-  
-  .main-content {
-    padding: 40px 0;
-    animation: slide-up 1s ease-in-out;
-  }
-  
-  @keyframes slide-up {
-    0% {
-      transform: translateY(50px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .company-description,
-  .content-data {
-    margin-bottom: 40px;
-  }
-  
-  h2 {
-    font-size: 20px;
-    font-weight: bold;
-    animation: fade-in 1s ease-in-out;
+    margin-bottom: 10px;
   }
   
   p {
     font-size: 16px;
     line-height: 1.5;
-    animation: fade-in 1s ease-in-out;
-  }
-  
-  .image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
-    animation: slide-up 1s ease-in-out;
-  }
-  
-  .image-container img {
-    max-width: 100%;
-    max-height: 200px;
-    margin: 0 10px;
-    animation: zoom-in 1s ease-in-out;
-    width: 100%;
-    max-height: 300px; /* Adjust the maximum height as needed */
-    object-fit: cover;
     margin-bottom: 20px;
-  }
+  } */
   
-  @keyframes zoom-in {
-    0% {
-      transform: scale(0.5);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-  
-  .join-us {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-    animation: fade-in 1s ease-in-out;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--secondary-color);
-    
-    border: none;
+  /* Image styles */
+  /* img {
+    max-width: 100%;
+    height: auto;
     border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-  }
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  } */
   
-  button:hover {
-    background-color: #0056b3; /* Darker shade of blue on hover */
-  }
-  
-  .progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 5px;
-    width: 0;
-    background-color: var(--primary-color);
-    animation: progress-bar-fill 2s ease-in-out forwards;
-  }
-  
-  @keyframes progress-bar-fill {
+  /* Animation */
+  /* @keyframes fadeIn {
     0% {
-      width: 0;
+      opacity: 0;
+      transform: translateY(20px);
     }
     100% {
-      width: 100%;
+      opacity: 1;
+      transform: translateY(0);
     }
   }
+  
+  .content-division,
+  .image-division {
+    animation: fadeIn 1s ease-in-out;
+  } */
+  
+  /* Responsive styles */
+  /* @media (max-width: 768px) {
+    .career-page {
+      flex-direction: column;
+    }
+  
+    .content-division,
+    .image-division {
+      flex: 1 1 100%;
+    }
+  } */
+
+  /* Styling for career page */
+/* Styling for career page */
+.career-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  height: 100vh; /* Set height to 100vh */
+  box-sizing: border-box; /* Include padding and border in height calculation */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 100%; /* Set height to 100% */
+  padding: 50px;
+}
+
+/* Rest of the styles remain the same */
+
+
+/* Text styles */
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h1{
+  /* color: rgb(25, 143, 190)  ; */
+  /* A gradient at the center of its container,
+ starting red, changing to blue, and finishing green */
+ background: radial-gradient(circle at center, rgb(4, 119, 251) 0, rgb(4, 119, 251), #10b7e3 100%);
+
+  /* Mask the color to the text, and remove the rest  */
+  -webkit-background-clip: text;
+  /* Make the text fill color value transparent so the masked background color comes through */
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Image styles */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.btn{
+  background-color: #c6c3c3;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 10px; /* Updated: Changed to round pill shape */
+  cursor: pointer;
+  /* margin-top: 10px; */
+  margin: 50px;
+  border:transparent;
+  
+}
+.btn:hover{
+  background: linear-gradient(45deg, rgb(4, 119, 251) 20%, rgb(109, 207, 226) 100%);
+  transition: .5s;
+}
+.content-division{
+  align-items: center;
+  margin-top: 120px;
+  font-family: math;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.grid-container {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
