@@ -55,8 +55,9 @@ const Home = () => {
           </section>
         </div>
       ))}
-      <Career/>
+      
       <Blog />
+      <Career/>
       <Contact />
     </div>
   );
