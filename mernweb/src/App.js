@@ -64,7 +64,7 @@ function App() {
         <Route path="/career" element={<CareerHome />} />
         <Route path="/*" element={<Error />} />
         <Route path="/upload" element={<CourseUpload />} />
-        <Route path="/users" element={<UserList />} />
+        {/* <Route path="/users" element={<UserList />} /> */}
         <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:slug" element={<CourseDetails />} />
         <Route path="/dashboard" element={<PrivateRoute />}>
