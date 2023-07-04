@@ -37,14 +37,16 @@
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
-
+.dropdown-item{
+  color:black !important
+}
 .nav-item a:hover
  {
   
   color: rgb(0, 212, 255);
 }
 .nav-item a.active{
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
 .dropdown-content {
   display: none;

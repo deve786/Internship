@@ -3,36 +3,43 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
-import config from "../configUrl";
+import toast,{Toaster } from "react-hot-toast";
 
 const Register = () => {
-  const navigate = useNavigate();
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const backendURL = config.backendURL;
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [answer, setAnswer] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      // Send registration data to the backend API using Axios
-      const response = await axios.post(`${backendURL}/api/v1/auth/register`, {
-        username,
+      const res = await axios.post("http://localhost:8080/api/v1/auth/register", {
+        name,
         email,
         password,
+        phone,
+        address,
+        answer,
       });
-
-      console.log(response.data); // Handle the response accordingly
-
-      // Redirect to the login page
-      navigate('/login');
+      if (res && res.data.success) {
+        toast.success(res.data && res.data.message);
+        
+        console.log(res.data.message)
+      } else {
+        toast.error(res.data.message);
+        console.log(res.data.message)
+      }
     } catch (error) {
-      console.error("An error occurred", error);
+      console.log(error);
+      toast.error("Something went wrong");
     }
   };
-
   return (
+    
     <div>
       <div className="container shadow my-5">
         <div className="row justify-content-center">
@@ -48,18 +55,19 @@ const Register = () => {
             </NavLink>
           </div>
           <div className="col-md-6 p-5">
-            <h1 className="display-6 fw-bolder mb-5">REGGISTER</h1>
+            <h1 className="display-6 fw-bolder mb-5">REGISTER</h1>
+        
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">
-                  Username
+                  Name
                 </label>
                 <input
                   type="text"
                   className="form-control"
                   id="name"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <div className="mb-3">
@@ -90,6 +98,42 @@ const Register = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
+              <div className="mb-3">
+                <label htmlFor="phoneNumber" className="form-label">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  className="form-control"
+                  id="phoneNumber"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="address" className="form-label">
+                  Address
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="address"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="favoriteSports" className="form-label">
+                  Favorite Sports
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="favoriteSports"
+                  value={answer}
+                  onChange={(e) => setAnswer(e.target.value)}
+                />
+              </div>
               <div className="mb-3 form-check">
                 <input
                   type="checkbox"
@@ -107,6 +151,8 @@ const Register = () => {
                 Register
               </button>
             </form>
+            <Toaster />
+            
           </div>
         </div>
       </div>
