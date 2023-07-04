@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import client from "../createClient";
 import BlockContent from "@sanity/block-content-to-react";
+import Career from "./Career";
 const Home = () => {
   const [banner, setBanner] = useState([]);
 
@@ -54,7 +55,7 @@ const Home = () => {
           </section>
         </div>
       ))}
-  
+      <Career/>
       <Blog />
       <Contact />
     </div>
