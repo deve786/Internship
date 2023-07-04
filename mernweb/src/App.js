@@ -20,7 +20,7 @@ import CareerHome from './components/CareerHome';
 import Courses from './components/Courses';
 import CourseDetails from './components/CourseDetails';
 import Client from './components/Client';
-import UserList from './components/UserList';
+// import UserList from './components/UserList';
 import CourseUpload from './components/CourseUpload';
 import AdminPanel from './components/AdminPanel';
 import Dashboard from './pages/user/Dashboard';
