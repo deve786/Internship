@@ -75,7 +75,7 @@ const UpdateProduct = () => {
       productData.append("category", category);
 
       const { data } = axios.put(
-        `/api/v1/product/update-product/${id}`,
+        `http://localhost:8080/api/v1/product/update-product/${id}`,
         productData
       );
       if (data?.success) {
@@ -158,7 +158,7 @@ const UpdateProduct = () => {
                 ) : (
                   <div className="text-center">
                     <img
-                      src={`/api/v1/product/product-photo/${id}`}
+                      src={`http://localhost:8080/api/v1/product/product-photo/${id}`}
                       alt="product_photo"
                       height={"200px"}
                       className="img img-responsive"
@@ -203,7 +203,7 @@ const UpdateProduct = () => {
                   onChange={(e) => setQuantity(e.target.value)}
                 />
               </div>
-              <div className="mb-3">
+              {/* <div className="mb-3">
                 <Select
                   bordered={false}
                   placeholder="Select Shipping"
@@ -218,7 +218,7 @@ const UpdateProduct = () => {
                   <Option value="0">No</Option>
                   <Option value="1">Yes</Option>
                 </Select>
-              </div>
+              </div> */}
               <div className="mb-3">
                 <label className="btn btn-outline-secondary col-md-12">
                   {video ? video.name : "Upload Video"}
