@@ -118,9 +118,14 @@ const Navbar = () => {
         <div className={`toggle-icon ${isMenuOpen ? "open" : ""}`} />
       </div>
       <ul className={`navbar-items ${isMenuOpen ? "open" : ""}`}>
-        <li className="nav-item">
+        <li className="nav-item" style={{ backgroundColor: "white" }}>
           <a href="/" className="active">
-            <img src="logoagc.png" alt="Logo" className="logo-image" />
+            <img
+              src="logoagc.png"
+              alt="Logo"
+              className="logo-image"
+              
+            />
           </a>
         </li>
         <li className="nav-item dropdown">
@@ -134,7 +139,10 @@ const Navbar = () => {
                   index % 5 === 0 && (
                     <div key={industry.slug.current} className="grid-row">
                       {industries.slice(index, index + 5).map((item) => (
-                        <a key={item.slug.current} href={`/${item.slug.current}`}>
+                        <a
+                          key={item.slug.current}
+                          href={`/${item.slug.current}`}
+                        >
                           {item.title}
                         </a>
                       ))}
