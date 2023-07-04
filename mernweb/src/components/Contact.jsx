@@ -26,7 +26,8 @@ const Contact = () => {
           </div>
           <div className="row">
             <div className="col-md-6">
-              <img src="contact1.jpg" alt="Contact" className="w-100" />
+            <img src="contact1.jpg" alt="Contact" style={{ width: "100%", height: "auto" }} />
+
             </div>
             <div className="col-md-6">
               <form>
