@@ -28,7 +28,7 @@ app.use(morgan('dev'));
 
 // Enable CORS with specific origin
 app.use(cors({
-  origin: 'https://webapp-lake-phi.vercel.app'
+  origin: '*'
 }));
 
 
