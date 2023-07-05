@@ -8,7 +8,7 @@ import productRoutes from "./routes/productRoutes.js";
 import JWT from 'jsonwebtoken';
 import cors from 'cors';
 import paymentRoutes from './routes/paymentRoutes.js';
-
+const app = express();
 // Enable CORS with specific origin
 app.use(cors({
   origin: 'https://webapp-lake-phi.vercel.apppp',
@@ -26,7 +26,7 @@ const connectDB = async () => {
 };
 
 connectDB();
-const app = express();
+
 
 app.use(express.json());
 app.use(morgan('dev'));
