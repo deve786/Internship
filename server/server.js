@@ -30,6 +30,7 @@ app.use(morgan('dev'));
 app.use(cors({
   origin: '*'
 }));
+console.log('CORS middleware applied'); 
 
 
 app.use("/api/v1/auth", authRoutes);
