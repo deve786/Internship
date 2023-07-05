@@ -28,6 +28,8 @@ app.use(morgan('dev'));
 
 app.use(cors({
   origin: 'https://webapp-lake-phi.vercel.app',
+  methods:["POST","GET"],
+  credentials:true
 }));
 
 app.use("/api/v1/auth", authRoutes);
