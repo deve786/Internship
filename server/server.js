@@ -11,8 +11,9 @@ import paymentRoutes from './routes/paymentRoutes.js';
 const app = express();
 // Enable CORS with specific origin
 app.use(cors({
-  origin: 'https://webapp-lake-phi.vercel.app',
-  exposedHeaders: ['Access-Control-Allow-Origin']
+  
+  origin:'*', 
+  credentials:true, 
 }));
 dotenv.config();
 
