@@ -12,7 +12,7 @@ const app = express();
 // Enable CORS with specific origin
 app.use(cors({
   
-  origin:'*', 
+  origin:'http://localhost:3000', 
   credentials:true, 
 }));
 dotenv.config();
