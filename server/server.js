@@ -32,14 +32,10 @@ connectDB();
 app.use(express.json());
 app.use(morgan('dev'));
 
-<<<<<<< HEAD
 // Enable CORS with specific origin
 app.use(cors({
   origin: 'http://localhost:3000',
 }));
-=======
-
->>>>>>> f4d91b31a393936aa236a6e03060b3ac1289dadd
 
 
 app.use("/api/v1/auth", authRoutes);
