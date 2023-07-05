@@ -40,6 +40,7 @@ import Career from './components/Career';
 import CategoryProduct from './pages/CategoryProduct';
 import Categories from './pages/Categories';
 import ProductDetails from './pages/ProductDetails';
+import CoursePage from './components/CoursePage';
 function App() {
   const location = useLocation();
   const hideNavbar = location.pathname.includes('/courses') || location.pathname.includes('/dashboard') || location.pathname.includes('/cart') || location.pathname.includes('/categories') || location.pathname.includes('/category');
@@ -90,6 +91,7 @@ function App() {
         <Route path="/category/:slug" element={<CategoryProduct/>} />
         <Route path="/product/:slug" element={<ProductDetails />} />
         <Route path="/categories" element={<Categories />} />
+        <Route path="/coursepage" element={<CoursePage />} />
       </Routes>
 
       <Footer />
