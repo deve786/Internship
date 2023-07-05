@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 app.use(cors({
-  origin: 'https://internship-zorc.vercel.app',
+  origin: 'https://webapp-lake-phi.vercel.app',
 }));
 
 app.use("/api/v1/auth", authRoutes);
