@@ -9,6 +9,11 @@ import JWT from 'jsonwebtoken';
 import cors from 'cors';
 import paymentRoutes from './routes/paymentRoutes.js';
 
+// Enable CORS with specific origin
+app.use(cors({
+  origin: 'https://webapp-lake-phi.vercel.apppp',
+  exposedHeaders: ['Access-Control-Allow-Origin']
+}));
 dotenv.config();
 
 const connectDB = async () => {
@@ -26,11 +31,7 @@ const app = express();
 app.use(express.json());
 app.use(morgan('dev'));
 
-// Enable CORS with specific origin
-app.use(cors({
-  origin: 'https://webapp-lake-phi.vercel.apppp',
-  exposedHeaders: ['Access-Control-Allow-Origin']
-}));
+
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category", categoryRoutes);
