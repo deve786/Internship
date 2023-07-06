@@ -8,13 +8,18 @@ import productRoutes from "./routes/productRoutes.js";
 import JWT from 'jsonwebtoken';
 import cors from 'cors';
 import paymentRoutes from './routes/paymentRoutes.js';
+import { createProxyMiddleware } from 'http-proxy-middleware';
+const proxy = {
+    target: 'https://internshipback.vercel.app',
+    changeOrigin: true
+}
+
 const app = express();
 // Enable CORS with specific origin
-app.use(cors({
-  
-  origin:'https://webapp-lake-phi.vercel.app', 
-  credentials:true, 
-}));
+app.use(
+  '/',
+  createProxyMiddleware(proxy)
+);
 dotenv.config();
 
 const connectDB = async () => {
