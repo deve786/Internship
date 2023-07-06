@@ -13,7 +13,7 @@ const app = express();
 // Enable CORS with specific origin
 app.use(
   cors({
-    origin: "https://webapp-lake-phi.vercel.app",
+    origin: "*",
     credentials: true,
   })
 );
