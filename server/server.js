@@ -10,6 +10,7 @@ import cors from 'cors';
 import paymentRoutes from './routes/paymentRoutes.js';
 const app = express();
 // Enable CORS with specific origin
+app.use(cors());
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
