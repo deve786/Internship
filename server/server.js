@@ -44,6 +44,9 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 8080;
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server is running on ${PORT} in ${process.env.DEV_MODE}`);
 });
+
+// Set the server timeout (e.g., 30 seconds)
+server.timeout = 30000;
