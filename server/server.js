@@ -8,9 +8,10 @@ import productRoutes from "./routes/productRoutes.js";
 import JWT from "jsonwebtoken";
 import cors from "cors";
 import paymentRoutes from "./routes/paymentRoutes.js";
+import createProxyMiddleware  from'http-proxy-middleware';
 const app = express();
 dotenv.config();
-
+app.use('/api', createProxyMiddleware({ target: 'https://internshipback.vercel.app', changeOrigin: true }));
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.MONGO_URL);
@@ -26,10 +27,10 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // Enable CORS with specific origin
-app.use(cors());
-Header('Access-Control-Allow-Origin', 'http://localhost:3000');
-Header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-Header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+// app.use(cors());
+// Header('Access-Control-Allow-Origin', 'http://localhost:3000');
+// Header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+// Header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category", categoryRoutes);
