@@ -49,4 +49,4 @@ const server = app.listen(PORT, () => {
 });
 
 // Set the server timeout (e.g., 30 seconds)
-server.timeout = 30000;
+server.timeout = 20000;
