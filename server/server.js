@@ -13,7 +13,8 @@ const app = express();
 app.use(cors({
   
   origin:'http://localhost:3000', 
-  credentials:true, 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200
 }));
 dotenv.config();
 
@@ -33,9 +34,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 // Enable CORS with specific origin
-app.use(cors({
-  origin: 'http://localhost:3000',
-}));
+
 
 
 app.use("/api/v1/auth", authRoutes);
