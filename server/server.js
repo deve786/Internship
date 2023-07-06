@@ -36,17 +36,7 @@ app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 app.use("/api/v1/payment", paymentRoutes);
 
-<<<<<<< HEAD
 app.get("/", (req, res) => {
-=======
-
-app.use("/api/v1/auth", authRoutes);
-app.use("/api/v1/category", categoryRoutes);
-app.use("/api/v1/product", productRoutes);
-app.use('/api/v1/payment', paymentRoutes);
-
-app.get('/', (req, res) => {
->>>>>>> 03e456baaf4921efc79d93f01356a20e86d66592
   res.send("<h1>Hellooo</h1>");
 });
 
