@@ -8,7 +8,7 @@ import productRoutes from "./routes/productRoutes.js";
 import JWT from "jsonwebtoken";
 import cors from "cors";
 import paymentRoutes from "./routes/paymentRoutes.js";
-import createProxyMiddleware  from'http-proxy-middleware';
+import {createProxyMiddleware}  from'http-proxy-middleware';
 const app = express();
 dotenv.config();
 app.use('/api', createProxyMiddleware({ target: 'https://internshipback.vercel.app', changeOrigin: true }));
