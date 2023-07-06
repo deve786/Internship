@@ -10,12 +10,12 @@ import cors from 'cors';
 import paymentRoutes from './routes/paymentRoutes.js';
 const app = express();
 // Enable CORS with specific origin
-app.use(cors({
-  
-  origin:'http://localhost:3000', 
-  credentials:true,            //access-control-allow-credentials:true
-  optionSuccessStatus:200
-}));
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
 dotenv.config();
 
 const connectDB = async () => {
