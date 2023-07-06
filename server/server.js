@@ -12,7 +12,7 @@ const app = express();
 // Enable CORS with specific origin
 app.use(cors({
   
-  origin:'http://localhost:3000', 
+  origin:'https://webapp-lake-phi.vercel.app', 
   credentials:true, 
 }));
 dotenv.config();
@@ -32,10 +32,6 @@ connectDB();
 app.use(express.json());
 app.use(morgan('dev'));
 
-// Enable CORS with specific origin
-app.use(cors({
-  origin: 'http://localhost:3000',
-}));
 
 
 app.use("/api/v1/auth", authRoutes);
