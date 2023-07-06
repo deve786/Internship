@@ -17,7 +17,7 @@ const proxy = {
 const app = express();
 // Enable CORS with specific origin
 app.use(
-  '/',
+  '/register',
   createProxyMiddleware(proxy)
 );
 dotenv.config();
