@@ -104,7 +104,7 @@ export const getSingleProductController = async (req, res) => {
 export const productCategoryController = async (req, res) => {
   try {
     const { slug } = req.params;
-
+    console.log("asd")
     // Find products based on the category slug
     const products = await productModel.find({ category: slug });
 

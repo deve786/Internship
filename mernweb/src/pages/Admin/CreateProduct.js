@@ -55,9 +55,10 @@ const CreateProduct = () => {
       );
       
       if (data?.success) {
-        toast.error(data?.message);
+        toast.success(data?.message);
+        
       } else {
-        toast.success("Product Created Successfully");
+        toast.success("Product Cssreated Successfully");
         navigate("/dashboard/admin/products");
       }
     } catch (error) {
