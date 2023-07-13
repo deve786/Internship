@@ -65,11 +65,12 @@ const CartPage = () => {
         order_id: data.id,
         handler: async (response) => {
           try {
+            console.log("enter")
             const paymentId = response.razorpay_payment_id;
             const signature = response.razorpay_signature;
 
             // Call your server-side API endpoint to verify the payment
-            const paymentResponse = await axios.post(" http://localhost:8080/api/v1/payment/verifyPayment", {
+            const paymentResponse = await axios.post(" http://localhost:8080/api/v1/payment/verify_Payment", {
               orderId: data.id,
               paymentId,
               signature,

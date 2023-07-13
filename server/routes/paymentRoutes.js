@@ -10,7 +10,7 @@ const razorpay = new Razorpay({
 });
 
 // Define the route to create a Razorpay order
-router.post('api/v1/payment/create_order', async (req, res) => {
+router.post('/create_order', async (req, res) => {
   try {
     const { amount } = req.body; // You'll send the payment amount from the frontend
     const currency = 'INR'; // You can use other supported currencies as per your requirements
@@ -31,17 +31,21 @@ router.post('api/v1/payment/create_order', async (req, res) => {
 // Define the route to verify the payment after a successful transaction
 router.post('/verify_payment', async (req, res) => {
   try {
+    res.json({ message: '123' });
     const { razorpay_payment_id, razorpay_order_id, razorpay_signature } = req.body;
-
+    
     // Verify the payment using the Razorpay instance
     const attributes = {
       order_id: razorpay_order_id,
       payment_id: razorpay_payment_id,
       signature: razorpay_signature,
+      
     };
+    res.json({ message: 'asdfghjk' });
     const paymentVerificationResponse = razorpay.payments.verify(attributes);
-
+    
     if (paymentVerificationResponse) {
+      
       // Payment is successful
       // You can update your database or take other actions here
       res.json({ message: 'Payment successful!' });
