@@ -120,9 +120,9 @@ const HomePage = () => {
         <div className="col-md-3 filters">
           <h4 className="text-center">Filter By Category</h4>
           <div className="d-flex flex-column">
-            {categories?.map((c) => (
+            {categories?.map((c,index) => (
               <Checkbox
-                key={c._id}
+                key={index}
                 onChange={(e) => handleFilter(e.target.checked, c._id)}
               >
                 {c.name}
@@ -133,8 +133,8 @@ const HomePage = () => {
           <h4 className="text-center mt-4">Filter By Price</h4>
           <div className="d-flex flex-column">
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>
-              {Prices?.map((p) => (
-                <div key={p._id}>
+              {Prices?.map((p,index) => (
+                <div key={index}>
                   <Radio value={p.array}>{p.name}</Radio>
                 </div>
               ))}
@@ -152,8 +152,8 @@ const HomePage = () => {
         <div className="col-md-9 ">
           <h1 className="text-center">All Products</h1>
           <div className="d-flex flex-wrap">
-            {products?.map((p) => (
-              <div className="card m-2 " key={p._id}>
+            {products?.map((p,index) => (
+              <div className="card m-2 " key={index}>
                 <img
                   src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"

@@ -36,10 +36,10 @@ const Header = () => {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <Link to="/" className="navbar-brand">
+            <Link to="/courses" className="navbar-brand">
               E-Learning 
             </Link>
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
+            <ul className="navbar-nav ms-auto mt-2 mb-5 mb-lg-0 ">
               <SearchInput />
               <li className="nav-item">
                 <NavLink to="/courses" className="nav-link ">
@@ -61,8 +61,8 @@ const Header = () => {
                       All Categories
                     </Link>
                   </li>
-                  {categories?.map((c) => (
-                    <li>
+                  {categories?.map((c,index) => (
+                    <li key={index}>
                       <Link
                         className="dropdown-item"
                         to={`/category/${c.slug}`}
@@ -122,13 +122,7 @@ const Header = () => {
                       </li>
                     </ul>
                   </li>
-                  <li className="nav-item">
-                    <NavLink onClick={handleLogout}
-                          to="/login"
-                          className="dropdown-item">
-                      Logout
-                    </NavLink>
-                  </li>
+                  
                 </>
               )}
               <li className="nav-item">

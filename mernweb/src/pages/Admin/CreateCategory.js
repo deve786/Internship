@@ -118,10 +118,10 @@ const CreateCategory = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {categories?.map((c) => (
+                  {categories?.map((c,index) => (
                     <>
                       <tr>
-                        <td key={c._id}>{c.name}</td>
+                        <td key={index}>{c.name}</td>
                         <td>
                           <button
                             className="btn btn-primary ms-2"
@@ -151,7 +151,7 @@ const CreateCategory = () => {
             <Modal
               onCancel={() => setVisible(false)}
               footer={null}
-              visible={visible}
+              open={visible}
             >
               <CategoryForm
                 value={updatedName}

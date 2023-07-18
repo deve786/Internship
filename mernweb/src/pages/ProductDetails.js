@@ -63,7 +63,7 @@ const ProductDetails = () => {
             })}
           </h6>
           <h6>Category : {product?.category?.name}</h6>
-          <button class="btn btn-secondary ms-1">ADD TO CART</button>
+          <button className="btn btn-secondary ms-1">ADD TO CART</button>
         </div>
       </div>
       <hr />
@@ -73,8 +73,8 @@ const ProductDetails = () => {
           <p className="text-center">No Similar Products found</p>
         )}
         <div className="d-flex flex-wrap">
-          {relatedProducts?.map((p) => (
-            <div className="card m-2" key={p._id}>
+          {relatedProducts?.map((p,index) => (
+            <div className="card m-2" key={index}>
               <img
                 src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
                 className="card-img-top"

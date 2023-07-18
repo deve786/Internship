@@ -7,15 +7,30 @@ const Users = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    getUsers();
+    // Fetch the users from your backend API
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/v1/users");
+        setUsers(response.data); // Assuming the API returns an array of user objects
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchUsers();
   }, []);
 
-  const getUsers = async () => {
+  const handleRoleChange = async (userId, isAdmin) => {
     try {
-      const response = await axios.get("http://localhost:8080/api/v1/users");
-      setUsers(response.data);
+      // Make an API call to update the user's role
+      await axios.put(`http://localhost:8080/api/v1/users/${userId}`, { isAdmin });
+      // Assuming the API updates the user's role successfully
+      // We will update the local state with the updated user
+      const updatedUsers = users.map((user) =>
+        user._id === userId ? { ...user, isAdmin } : user
+      );
+      setUsers(updatedUsers);
     } catch (error) {
-      console.error("Error fetching users:", error);
+      console.log(error);
     }
   };
 
@@ -28,12 +43,13 @@ const Users = () => {
           </div>
           <div className="col-md-9">
             <h1>All Users</h1>
-            <table className="table">
+            <table className="table table-bordered">
               <thead>
                 <tr>
                   <th>Name</th>
                   <th>Email</th>
                   <th>Role</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -41,7 +57,24 @@ const Users = () => {
                   <tr key={user._id}>
                     <td>{user.name}</td>
                     <td>{user.email}</td>
-                    <td>{user.role}</td>
+                    <td>
+                      <select
+                        value={user.isAdmin}
+                        onChange={(e) =>
+                          handleRoleChange(user._id, e.target.value === "true")
+                        }
+                      >
+                        <option value={true}>Admin</option>
+                        <option value={false}>User</option>
+                      </select>
+                    </td>
+                    <td>
+                      <button
+                        onClick={() => handleRoleChange(user._id, !user.isAdmin)}
+                      >
+                        Toggle Role
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>

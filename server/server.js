@@ -9,6 +9,7 @@ import JWT from 'jsonwebtoken';
 import cors from 'cors';
 import paymentRoutes from './routes/paymentRoutes.js';
 
+
 dotenv.config();
 
 const connectDB = async () => {

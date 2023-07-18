@@ -29,8 +29,8 @@ const Home = () => {
 
   return (
     <div>
-      {banner.map((banner) => (
-        <div>
+      {banner.map((banner,index) => (
+        <div key={index}>
           <section
             className="banner"
             style={{ backgroundImage: `url(${banner.mainImage.asset.url})` }}

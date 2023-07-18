@@ -41,9 +41,10 @@ import CategoryProduct from './pages/CategoryProduct';
 import Categories from './pages/Categories';
 import ProductDetails from './pages/ProductDetails';
 import CoursePage from './components/CoursePage';
+import Search from './pages/Search';
 function App() {
   const location = useLocation();
-  const hideNavbar = location.pathname.includes('/courses') || location.pathname.includes('/dashboard') || location.pathname.includes('/cart') || location.pathname.includes('/categories') || location.pathname.includes('/category');
+  const hideNavbar = location.pathname.includes('/courses') || location.pathname.includes('/dashboard') || location.pathname.includes('/cart') || location.pathname.includes('/categories') || location.pathname.includes('/category') || location.pathname.includes('/product') || location.pathname.includes('/search');
   
   return (
     <>
@@ -84,6 +85,7 @@ function App() {
           <Route path="admin/product/:slug" element={<UpdateProduct />} />
           <Route path="admin/products" element={<Products />} />
           <Route path="admin/users" element={<Users />} />
+          
           <Route path="admin/orders" element={<AdminOrders />} />
         </Route>
         <Route path="/cart" element={<CartPage />} />
@@ -92,6 +94,7 @@ function App() {
         <Route path="/product/:slug" element={<ProductDetails />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/coursepage" element={<CoursePage />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
 
       <Footer />

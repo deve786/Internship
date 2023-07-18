@@ -31,9 +31,9 @@ const Products = () => {
         <div className="col-md-9 ">
           <h1 className="text-center">All Products List</h1>
           <div className="d-flex flex-wrap">
-            {products?.map((p) => (
+            {products?.map((p,index) => (
               <Link
-                key={p._id}
+                key={index}
                 to={`/dashboard/admin/product/${p.slug}`}
                 className="product-link"
               >
