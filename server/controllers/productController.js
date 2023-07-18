@@ -5,6 +5,7 @@ import fs from "fs";
 import slugify from "slugify";
 import dotenv from "dotenv";
 import Razorpay from "razorpay";
+import multer from "multer";
 
 dotenv.config();
 
@@ -16,12 +17,28 @@ dotenv.config();
 //   privateKey: process.env.BRAINTREE_PRIVATE_KEY,
 // });
 
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/videos/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+
+const videoUpload = multer({ storage }).single("video");
+
+
 export const createProductController = async (req, res) => {
   try {
     const { name, description, price, category, quantity, shipping } =
       req.fields;
     const { photo } = req.files;
-    //alidation
+    let video;
+    let videoUrl = "";
+
+    // Validation
     switch (true) {
       case !name:
         return res.status(500).send({ error: "Name is Required" });
@@ -33,29 +50,55 @@ export const createProductController = async (req, res) => {
         return res.status(500).send({ error: "Category is Required" });
       case !quantity:
         return res.status(500).send({ error: "Quantity is Required" });
-      case photo && photo.size > 1000000:
-        return res
-          .status(500)
-          .send({ error: "photo is Required and should be less then 1mb" });
+      case !photo:
+        return res.status(500).send({ error: "Photo is Required" });
     }
 
-    const products = new productModel({ ...req.fields, slug: slugify(name) });
-    if (photo) {
-      products.photo.data = fs.readFileSync(photo.path);
-      products.photo.contentType = photo.type;
-    }
-    await products.save();
-    res.status(201).send({
-      success: true,
-      message: "Product Created Successfully",
-      products,
+    // Handle video upload
+    videoUpload(req, res, async function (err) {
+      if (err) {
+        return res.status(500).send({ error: "Failed to upload the video." });
+      }
+
+      // If video was uploaded, get the file details
+      if (req.file) {
+        video = req.file;
+        videoUrl = req.file.path;
+      }
+
+      // Save product in the database
+      const product = new productModel({
+        name,
+        description,
+        price,
+        category,
+        quantity,
+        shipping,
+        photo: {
+          data: fs.readFileSync(photo.path),
+          contentType: photo.type,
+        },
+        video: {
+          data: video ? fs.readFileSync(video.path) : null,
+          contentType: video ? video.mimetype : null,
+        },
+        slug: slugify(name),
+      });
+
+      await product.save();
+
+      res.status(201).send({
+        success: true,
+        message: "Product Created Successfully",
+        product,
+      });
     });
   } catch (error) {
     console.log(error);
     res.status(500).send({
       success: false,
       error,
-      message: "Error in crearing product",
+      message: "Error in creating product",
     });
   }
 };

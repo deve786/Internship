@@ -18,11 +18,14 @@ const CreateProduct = () => {
   const [quantity, setQuantity] = useState("");
   const [photo, setPhoto] = useState(null);
   const [video, setVideo] = useState(null);
+  const [message, setMessage] = useState("");
 
   // Get all categories
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8080/api/v1/category/get-category");
+      const { data } = await axios.get(
+        "http://localhost:8080/api/v1/category/get-category"
+      );
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -37,32 +40,31 @@ const CreateProduct = () => {
   }, []);
 
   // Create product function
-  const handleCreate = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("price", price);
+    formData.append("category", category);
+    formData.append("quantity", quantity);
+    formData.append("photo", photo);
+    formData.append("video", video);
+
     try {
-      const productData = new FormData();
-      productData.append("name", name);
-      productData.append("description", description);
-      productData.append("price", price);
-      productData.append("quantity", quantity);
-      productData.append("photo", photo);
-      productData.append("category", category);
-      productData.append("video", video);
-      
-      const { data } = await axios.post(
+      const response = await axios.post(
         "http://localhost:8080/api/v1/product/create-product",
-        productData
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
       );
-      
-      if (data?.success) {
-        toast.error(data?.message);
-      } else {
-        toast.success("Product Created Successfully");
-        navigate("/dashboard/admin/products");
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error("Something went wrong");
+      setMessage(response.data.message);
+    } catch (err) {
+      setMessage("Failed to create the product.");
     }
   };
 
@@ -119,18 +121,12 @@ const CreateProduct = () => {
                 )}
               </div>
               <div className="mb-3">
-                <Upload
-                  beforeUpload={(file) => {
-                    setVideo(file);
-                    return false;
-                  }}
-                  showUploadList={false}
-                  accept="video/mp4, video/mpeg, video/ogg, video/webm"
-                >
-                  <Button icon={<UploadOutlined />} className="w-100">
-                    {video ? video.name : "Upload Video"}
-                  </Button>
-                </Upload>
+              <input
+    type="file"
+    name="video"
+    onChange={(e) => setVideo(e.target.files[0])}
+    accept="video/mp4, video/mpeg, video/ogg, video/webm"
+  />
               </div>
               <div className="mb-3">
                 <input
@@ -169,7 +165,7 @@ const CreateProduct = () => {
                 />
               </div>
               <div className="mb-3">
-                <button className="btn btn-primary" onClick={handleCreate}>
+                <button className="btn btn-primary" onClick={handleSubmit}>
                   CREATE PRODUCT
                 </button>
               </div>
