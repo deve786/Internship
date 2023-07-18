@@ -42,6 +42,7 @@ import Categories from './pages/Categories';
 import ProductDetails from './pages/ProductDetails';
 import CoursePage from './components/CoursePage';
 import Search from './pages/Search';
+import Forgot from './components/Forgot';
 function App() {
   const location = useLocation();
   const hideNavbar = location.pathname.includes('/courses') || location.pathname.includes('/dashboard') || location.pathname.includes('/cart') || location.pathname.includes('/categories') || location.pathname.includes('/category') || location.pathname.includes('/product') || location.pathname.includes('/search');
@@ -58,6 +59,7 @@ function App() {
         <Route exact path="/contact" element={<Contact />} />
         <Route path="/admin/dashboard" element={<AdminPanel />} />
         <Route exact path="/login" element={<Login />} />
+        <Route exact path="/forgot" element={<Forgot />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/allblog" element={<AllBlog />} />
         <Route exact path="/services" element={<Services />} />
