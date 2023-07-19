@@ -45,6 +45,7 @@ import Search from './pages/Search';
 import Forgot from './components/Forgot';
 import Video from './components/Video';
 import VideoPage from './components/VideoPage';
+import ContactSubmissions from './components/ContactSubmissions';
 function App() {
   const location = useLocation();
   const hideNavbar = location.pathname.includes('/courses') || location.pathname.includes('/dashboard') || location.pathname.includes('/cart') || location.pathname.includes('/categories') || location.pathname.includes('/category') || location.pathname.includes('/product') || location.pathname.includes('/search');
@@ -77,6 +78,7 @@ function App() {
         {/* <Route path="/users" element={<UserList />} /> */}
         <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:slug" element={<CourseDetails />} />
+        <Route path="/contact-submission" element={<ContactSubmissions />} />
         <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="user" element={<Dashboard />} />
           <Route path="user/orders" element={<Orders />} />

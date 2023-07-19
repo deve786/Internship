@@ -79,9 +79,10 @@ const CartPage = () => {
             console.log(paymentResponse.data); // Handle the server response accordingly
 
             setLoading(false);
+            console.log("first")
             localStorage.removeItem("cart");
             setCart([]);
-            navigate("/dashboard/user/orders");
+            //navigate("/dashboard/user/orders");
             toast.success("Payment Completed Successfully");
           } catch (error) {
             console.log(error);

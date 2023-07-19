@@ -1,17 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 const Contact = () => {
-  useEffect(() => {
-    const handleScroll = () => {
-      // Add animations or effects based on scroll position
-    };
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-    window.addEventListener("scroll", handleScroll);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Submit form data to the backend using Axios or any other library
+    axios.post("http://localhost:8080/api/v1/auth/contact", formData)
+      .then((res) => {
+        // Handle success response if needed
+        console.log("Form submitted successfully:", res.data);
+        // Optionally, you can show a success message to the user
+      })
+      .catch((err) => {
+        // Handle error if needed
+        console.error("Error submitting form:", err);
+        // Optionally, you can show an error message to the user
+      });
+  };
 
   return (
     <div>
@@ -26,11 +41,10 @@ const Contact = () => {
           </div>
           <div className="row">
             <div className="col-md-6">
-            <img src="contact1.jpg" alt="Contact" style={{ width: "100%", height: "auto" }} />
-
+              <img src="contact1.jpg" alt="Contact" style={{ width: "100%", height: "auto" }} />
             </div>
             <div className="col-md-6">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="name" className="form-label">Your Name</label>
                   <input
@@ -38,6 +52,9 @@ const Contact = () => {
                     className="form-control"
                     id="name"
                     placeholder="Enter Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                   />
                 </div>
                 <div className="mb-3">
@@ -47,6 +64,9 @@ const Contact = () => {
                     className="form-control"
                     id="email"
                     placeholder="Enter Your Email Id"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                   />
                 </div>
                 <div className="mb-3">
@@ -55,6 +75,9 @@ const Contact = () => {
                     className="form-control"
                     id="message"
                     rows="5"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                   ></textarea>
                 </div>
                 <button type="submit" className="btn btn-primary rounded-pill px-4">

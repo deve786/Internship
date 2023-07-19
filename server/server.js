@@ -9,7 +9,7 @@ import JWT from 'jsonwebtoken';
 import cors from 'cors';
 import paymentRoutes from './routes/paymentRoutes.js';
 import userRoutes from './routes/userRoutes.js';
-
+import contactRoutes from './routes/contactRoutes.js';
 
 dotenv.config();
 
@@ -35,6 +35,7 @@ app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 app.use('/api/v1/payment', paymentRoutes);
 app.use("/api/v1/auth", userRoutes);
+
 app.get('/', (req, res) => {
   res.send("<h1>Hellooo</h1>");
 });

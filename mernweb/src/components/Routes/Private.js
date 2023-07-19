@@ -12,7 +12,7 @@ export default function PrivateRoute() {
     const authCheck = async () => {
       console.log("check")
       const res = await axios.get("http://localhost:8080/api/v1/auth/user-auth");
-      
+      console.log("response",res)
       if (res.data.ok) {
         setOk(true);
       } else {

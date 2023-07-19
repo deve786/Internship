@@ -10,6 +10,7 @@ import {
   orderStatusController,
 } from "../controllers/authController.js";
 import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js";
+import contactController from '../controllers/contactController.js';
 
 //router object
 const router = express.Router();
@@ -52,5 +53,10 @@ router.put(
   isAdmin,
   orderStatusController
 );
+
+router.post('/contact', contactController.submitContactForm);
+
+
+router.get('/contact', contactController.getAllContactSubmissions);
 
 export default router;
